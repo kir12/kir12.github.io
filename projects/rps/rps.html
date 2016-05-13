@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+      <title>Rock, Paper, Scissors</title>
+      <link rel="stylesheet" type="text/css" href="../../stylesheet.css"/>
+  		<link rel="shortcut icon" href="../../favicon.ico"/>
+      <style>
+      </style>
+    </head>
+
+    <body>
+      <script>
+        var userChoice = prompt("Do you choose rock, paper or scissors?");
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+          computerChoice = "rock";
+        }
+        else if(computerChoice <= 0.67) {
+          computerChoice = "paper";
+        }
+        else {
+          computerChoice = "scissors";
+        };
+        console.log("Computer: " + computerChoice);
+
+        var compare = function(choice1, choice2) {
+          if (choice1 === choice2) {
+              window.alert("In a matchup between " + choice1 + "and" + choice2 + ", The result is a tie!");
+          }
+          else if (choice1 === "rock") {
+              if (choice2 === "scissors") {
+                  window.alert("In a matchup between " + choice1 + " and " + choice2 + ", Rock wins this match!");
+              }
+              else {
+                  window.alert("In a matchup between " + choice1 + " and " + choice2 + ", Paper wins this match!");
+              };
+          }
+          else if (choice1 === "paper") {
+              if (choice2 === "rock") {
+                  window.alert("In a matchup between " + choice1 + " and " + choice2 + ", Paper wins this match!");
+              }
+              else {
+                  window.alert("In a matchup between " + choice1 + " and " + choice2 + ", Scissors wins this match!");
+              };
+          }
+          else if (choice1 === "scissors") {
+            if (choice2 === "rock") {
+              window.alert("In a matchup between " + choice1 + " and " + choice2 + ", Rock wins this match!");
+            }
+            else {
+              window. alert("In a matchup between " + choice1 + " and " + choice2 + ", Scissors wins this match!")
+            };
+          };
+        };
+        compare(userChoice,computerChoice);
+      </script>
+      <div id = "name">
+  			<a href = "../../index.html" id = "headlink">
+  				<hr style = "height:1px; visibility: hidden;">
+  				<div style = "width: 100%; height: 3px; background-color: white;"></div>
+  				<div style = "padding-left: 0.1em;">
+  					<b>City Boulevard- 'Feel the Bern' Bus Terminal Station</b></br>
+  					<img src = "../../4sign.png">
+  					<img src = "../../bsign.png">
+  					<img src = "../../dsign.png">
+  					<img src = "../../bus2.png">
+  				</div>
+  			</a>
+  		</div>
+      <div id = "header">
+  			<div class = "headitem"><a href = "../../about/about.html">ABOUT</a></div>
+        <div class = "headitem"><a href = "../projects.html">SCHOOL PROJECTS</a></div>
+  			<div class = "headitem"><a href = "#">BLOG</a></div>
+  			<div class = "headitem"><a href = "../../dankmemes/dankmemes.html">RESUME</a></div>
+  		</div>
+      <div id = "verticalnav">
+        <div class = "navbar_child"><a href = "../cities/cities.html">Cities</a></div>
+        <div class = "navbar_child"><a href = "../summary/summary.html">HTML Project Summary</a></div>
+        <div class = "navbar_child"  style = "border-top: 3px solid green;"><a href = ""><b>Rock, Paper, Scissors</b></a></div>
+      </div>
+      <div class = "body">
+        <h1>Rock, Paper Scissors</h1>
+      <div class = "body_container">
+          <p>The game functions by way of window alerts. To restart the game, please reload the page.</p>
+          <p>This is a very rudimentary build, and will be processed later.</p>
+      </div>
+    </div>
+    </body>
+  </html>
