@@ -7,15 +7,28 @@
       <style>
         #game {
           width: 50%;
+          width: 80%;
           padding: 1em;
           border: 1px solid black;
+          border: 1px solid white;
           display: block;
           margin: auto;
+          background-color: grey;
         }
         .game_container {
           border: 1px solid black;
+          border: 1px solid white;
           padding: 1em;
           margin: 0.3em;
+          overflow: hidden;
+          background-color: white;
+        }
+        .game_container img {
+          display: inline;
+        }
+
+        h2 {
+          text-align: center;
         }
       </style>
     </head>
@@ -56,10 +69,26 @@
           <div id = "game">
             <div class = "game_container">
               ddd
+              <div>
+                <h2>You</h2>
+              </div>
+              <img src = "rock.png">
+              <img src = "paper.png">
+              <img src = "scissors.png">
             </div>
             <div class = "game_container">
               ddd
+              <div>
+                <h2>Computer</h2>
+              </div>
+              <img src = "rock.png">
+              <img src = "paper.png">
+              <img src = "scissors.png">
             </div>
+            <div class = "game_container">
+              <h2>Verdict</h2>
+              <h2></h2>
+          </div>
         </div>
       </div>
     </body>
