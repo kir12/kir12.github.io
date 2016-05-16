@@ -8,16 +8,24 @@
         #game {
           width: 80%;
           padding: 1em;
-          border: 1px solid black;
+          border: 1px solid white;
           display: block;
           margin: auto;
+          background-color: grey;
         }
         .game_container {
-          border: 1px solid black;
+          border: 1px solid white;
           padding: 1em;
           margin: 0.3em;
-          display: inline;
           overflow: hidden;
+          background-color: white;
+        }
+        .game_container img {
+          display: inline;
+        }
+
+        h2 {
+          text-align: center;
         }
       </style>
     </head>
@@ -57,15 +65,24 @@
           <p>As part of a venture into Javascript, this page seeks to emulate RPS by having you, the player, verse a computer. Just click an option on the screen, and the game will begin!</p>
           <div id = "game">
             <div class = "game_container">
+              <div>
+                <h2>You</h2>
+              </div>
               <img src = "rock.png">
               <img src = "paper.png">
               <img src = "scissors.png">
             </div>
             <div class = "game_container">
+              <div>
+                <h2>Computer</h2>
+              </div>
               <img src = "rock.png">
               <img src = "paper.png">
               <img src = "scissors.png">
             </div>
+            <div class = "game_container">
+              <h2>Verdict</h2>
+              <h2></h2>
           </div>
         </div>
       </div>
