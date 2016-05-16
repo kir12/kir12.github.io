@@ -5,7 +5,18 @@
       <link rel="stylesheet" type="text/css" href="../../stylesheet.css"/>
       <link rel="shortcut icon" href="../../favicon.ico"/>
       <style>
+        table {
+          padding: 1em;
+          background-color: #FF6319;
+        }
+        td {
+          background-color: white;
+        }
 
+        th {
+          background-color: #996633;
+          color: white;
+        }
       </style>
     </head>
 
@@ -42,11 +53,11 @@
         <div class = "body_container">
           <p>Rock, Paper, Scissors is an age old game that takes up many shapes and forms all over the world. It's been used to resolve ages of sibling rivalries, and is even used in adult conflicts, such as the fate of the Earth.</p>
           <p>As part of a venture into Javascript, this page seeks to emulate RPS by having you, the player, verse a computer. Just click an option on the screen, and the game will begin!</p>
-          <table border ="1">
+          <table align = "center">
             <tr>
               <th colspan = "3">User</th>
             </tr>
-            <tr>
+            <tr id = "user">
               <td><img src = "rock.png"></td>
               <td><img src = "paper.png"></td>
               <td><img src = "scissors.png"></td>
@@ -58,8 +69,7 @@
               <td><img src = "paper.png"></td>
               <td><img src = "scissors.png"></td>
             </tr>
-            <tr><th colspan = "3">Verdict</td></tr>
-            <tr><th colspan = "3"></td></tr>
+            <tr><th colspan = "3" style = "background-color: #808183">Verdict</td></tr>
           </table>
         </div>
       </div>
