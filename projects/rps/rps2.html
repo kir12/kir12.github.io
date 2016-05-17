@@ -7,15 +7,19 @@
       <style>
         table {
           padding: 1em;
-          background-color: #FF6319;
+          background-color: #A7A9AC;
         }
         td {
           background-color: white;
+          border: 3px solid white;
         }
 
         th {
-          background-color: #996633;
           color: white;
+        }
+
+        #user td:hover{
+          border: 3px solid #00933C;
         }
       </style>
     </head>
@@ -55,7 +59,7 @@
           <p>As part of a venture into Javascript, this page seeks to emulate RPS by having you, the player, verse a computer. Just click an option on the screen, and the game will begin!</p>
           <table align = "center">
             <tr>
-              <th colspan = "3">User</th>
+              <th colspan = "3" style = "background-color: #0039A6;">User</th>
             </tr>
             <tr id = "user">
               <td><img src = "rock.png"></td>
@@ -63,7 +67,7 @@
               <td><img src = "scissors.png"></td>
             </tr>
             <tr>
-              <th colspan = "3">Computer</th>
+              <th colspan = "3" style = "background-color: #B933AD;">Computer</th>
             </tr>
               <td><img src = "rock.png"></td>
               <td><img src = "paper.png"></td>
