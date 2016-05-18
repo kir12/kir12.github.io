@@ -1,4 +1,4 @@
-console.log(userChoice);
+
 
 /*if (userChoice == "rock") {
   confirm("The user picked rock.");
