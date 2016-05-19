@@ -1,13 +1,19 @@
+var scissors = function() {
+  var userChoice = "scissors";
+  return userChoice;
+  confirm("deez nuts");
+};
 
+var rock = function() {
+  var userChoice = "rock";
+  return userChoice;
+  confirm("deez nuts");
+};
 
-/*if (userChoice == "rock") {
-  confirm("The user picked rock.");
-}
+var paper = function() {
+  var userChoice = "paper";
+  return userChoice;
+  confirm("deez nuts");
+};
 
-else if (userChoice == "paper") {
-  confirm("the user picked paper");
-}
-
-else if (userChoice == "scissors"){
-  confirm("the user picked paper");
-};*/
+console.log(userChoice);
