@@ -1,4 +1,9 @@
-var scissors = function() {
+var rock = document.getElementById('rock');
+rock.onclick = function(){
+  confirm("HA!");
+}
+
+function scissors() {
   var userChoice = "scissors";
   return userChoice;
   confirm("deez nuts");
@@ -15,5 +20,3 @@ var paper = function() {
   return userChoice;
   confirm("deez nuts");
 };
-
-console.log(userChoice);
