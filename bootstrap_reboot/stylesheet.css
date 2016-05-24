@@ -1,1 +1,35 @@
-/*begin by adding mta header css*/
+#name {
+	display: block;
+	text-align: left;
+	font-family: Helvetica, Ariel Black, sans-serif;
+	font-size: 3em;
+	background-color: black;
+	color: white;
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0.5em;
+}
+
+#line {
+	width: auto;
+	height: 0.3em;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	overflow: auto;
+
+}
+
+#name a {
+  text-drecoration: none;
+  color: white;
+}
+
+#name a:hover {
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 100%;
+  width: auto;
+}
