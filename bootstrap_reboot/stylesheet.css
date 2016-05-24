@@ -33,3 +33,9 @@
   height: 100%;
   width: auto;
 }
+
+#lifeofbrian {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
