@@ -20,8 +20,8 @@ var hint2 = "The number is between " + hint2minus + " and " + hint2plus;
 var hint3 = "The number is between " + hint3minus + " and " + hint3plus;
 function userInput(form) {
   var input = form.usertext.value;
-  if (input === ""){
-    window.alert("Please enter an input.")
+  if (input === "" || input.length < 4 || input.length > 4){
+    window.alert("Please enter a valid password.")
   }
   else{
     trial(input,number);
