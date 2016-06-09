@@ -8,6 +8,7 @@ for (i = 1; i <= 4; i+=1){
 };
 number = [number];
 number = Number(number.join());
+console.log(number);
 hint1minus = number - 100;
 hint1plus = number + 100;
 hint2minus = number - 50;
@@ -29,8 +30,10 @@ function userInput(form) {
 };
 
 function trial(input,number) {
-  if (input === number){
-    document.getElementById("win").innerHTML = "Great! you Win!";
+  if (input == number){
+    document.getElementById("winResult").style.display = "block";
+    document.getElementById("win").innerHTML = "Great! you Win! Here was the winning passcode!";
+    document.getElementById("win2").innerHTML = number;
     document.getElementById("button2").disabled = "false";
   }
   else{
@@ -50,6 +53,7 @@ function trial(input,number) {
       document.getElementById("hint3").innerHTML = hint3;
     }
     else{
+      document.getElementById("loseResult").style.display = "block";
       document.getElementById("lose").innerHTML  = "You lost. Password:"
       document.getElementById("lose2").innerHTML = number;
       document.getElementById("button2").disabled = false;
