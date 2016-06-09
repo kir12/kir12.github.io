@@ -54,7 +54,7 @@ function trial(input,number) {
     }
     else{
       document.getElementById("loseResult").style.display = "block";
-      document.getElementById("lose").innerHTML  = "You lost. Password:"
+      document.getElementById("lose").innerHTML  = "Sorry, you lost. Here is the correct password:"
       document.getElementById("lose2").innerHTML = number;
       document.getElementById("button2").disabled = false;
     };
