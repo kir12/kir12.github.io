@@ -1,13 +1,6 @@
 //Rewrite entire code using modular programmming
 var tries = 0;
-
-var number = [];
-for (i = 1; i <= 4; i+=1){
-  var subNumber = [Math.floor(10*Math.random())];
-  number += subNumber;
-};
-number = [number];
-number = Number(number.join());
+var number = Math.floor(10000*Math.random());
 console.log(number);
 hint1minus = number - 100;
 hint1plus = number + 100;
@@ -18,6 +11,7 @@ hint3plus = number + 25;
 var hint1 = "The number is between " + hint1minus + " and " + hint1plus;
 var hint2 = "The number is between " + hint2minus + " and " + hint2plus;
 var hint3 = "The number is between " + hint3minus + " and " + hint3plus;
+
 function userInput(form) {
   var input = form.usertext.value;
   if (input === "" || input.length < 4 || input.length > 4){
@@ -26,13 +20,12 @@ function userInput(form) {
   else{
     trial(input,number);
   }
-
 };
 
 function trial(input,number) {
   if (input == number){
     document.getElementById("winResult").style.display = "block";
-    document.getElementById("win").innerHTML = "Great! you Win! Here was the winning passcode!";
+    document.getElementById("win").innerHTML = "Great, you win! Here was the winning passcode!";
     document.getElementById("win2").innerHTML = number;
     document.getElementById("button2").disabled = "false";
   }
