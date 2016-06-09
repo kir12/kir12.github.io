@@ -7,9 +7,7 @@ for (i = 1; i <= 4; i+=1){
   number += subNumber;
 };
 number = [number];
-number = number.join();
-number = Number(number);
-console.log(number);
+number = Number(number.join());
 hint1minus = number - 100;
 hint1plus = number + 100;
 hint2minus = number - 50;
@@ -21,8 +19,13 @@ var hint2 = "The number is between " + hint2minus + " and " + hint2plus;
 var hint3 = "The number is between " + hint3minus + " and " + hint3plus;
 function userInput(form) {
   var input = form.usertext.value;
-  console.log("input was ", input);
-  trial(input,number);
+  if (input === ""){
+    window.alert("Please enter an input.")
+  }
+  else{
+    trial(input,number);
+  }
+
 };
 
 function trial(input,number) {
