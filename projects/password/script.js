@@ -50,7 +50,6 @@ function trial(input,number) {
       document.getElementById("hint3").innerHTML = hint3;
     }
     else{
-      document.getElementById("group4").style.display = "block";
       document.getElementById("lose").innerHTML  = "You lost. Password:"
       document.getElementById("lose2").innerHTML = number;
       document.getElementById("button2").disabled = false;
