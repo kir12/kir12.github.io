@@ -31,25 +31,26 @@ function userInput(form) {
 function trial(input,number) {
   if (input === number){
     document.getElementById("win").innerHTML = "Great! you Win!";
-    document.getElementById("hint1").innerHTML = "";
-    document.getElementById("hint2").innerHTML = "";
-    document.getElementById("hint3").innerHTML = "";
-    document.getElementById("button2").disabled = false;
+    document.getElementById("button2").disabled = "false";
   }
   else{
     if (tries === 0){
       tries+=1;
+      document.getElementById("group1").style.display = "block";
       document.getElementById("hint1").innerHTML = hint1;
     }
     else if (tries === 1){
       tries+=1;
+      document.getElementById("group2").style.display = "block";
       document.getElementById("hint2").innerHTML = hint2;
     }
     else if (tries === 2){
       tries+=1;
+      document.getElementById("group3").style.display = "block";
       document.getElementById("hint3").innerHTML = hint3;
     }
     else{
+      document.getElementById("group4").style.display = "block";
       document.getElementById("lose").innerHTML  = "You lost. Password:"
       document.getElementById("lose2").innerHTML = number;
       document.getElementById("button2").disabled = false;
