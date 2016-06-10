@@ -51,9 +51,10 @@ function userInput(form) { //activating line
   var input = form.usertext.value; //takes in inputed text, when function is alculated.
   //tests to see if guess fits proper parameters. Exploits || 'or' operator to fit multiple conditoinals (see top comments for specific conditionals).
   if (input === "" || input.length < 4 || input.length > 4){
-    window.alert("Please enter a valid password."); //tells user to enter proper password then terminates function, watiing for user to enter new guess.
+    document.getElementById("wrong_input").style.display = "block"; //enables alert that tells user input is wrong, then terminates function.
   }
   else{ //if user inputs proper function
+    document.getElementById("wrong_input").style.display = "none"; //disables the alert that told the user that the input is wrong.
     trial(input,number);
     //sends off to next function
   }
