@@ -67,7 +67,7 @@ if case fials, tries gets added 1(remember, earlier it was 0), and hints are add
 speciific comments are below.
 */
 function trial(input,number) { //takes in global paramets input (triggered by first function) and number, a global var)
-  while (tries < 5){
+  while (tries < 5){ //mandatory while loop: basically continues
     if (input == number){ //first conditional if equal
       document.getElementById("winResult").style.display = "block"; //re-enables winning display (see html comments)
       document.getElementById("win").innerHTML = "Great, you win! Here was the winning passcode!"; //tells user s/he has won
@@ -97,7 +97,7 @@ function trial(input,number) { //takes in global paramets input (triggered by fi
         document.getElementById("button2").disabled = false; //activates second function which user can use to reset game if s/he wants
       };
     };
-    break;
+    break;//exits out of loop once the function ends
   };
 
 };
