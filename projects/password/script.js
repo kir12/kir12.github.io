@@ -26,12 +26,12 @@ Math.floor() rounds off to get the final result.
 */
 
 //calculates number parameters that will display in hint.
-hint1minus = number - 100;
-hint1plus = number + 100;
-hint2minus = number - 50;
-hint2plus = number + 50;
-hint3minus = number - 25;
-hint3plus = number + 25;
+hint1minus = number - 50;
+hint1plus = number + 50;
+hint2minus = number - 25;
+hint2plus = number + 25;
+hint3minus = number - 10;
+hint3plus = number + 10;
 
 
 //concatonates hints that will print if user gets guesses wrong. Exploits fact that this kind of concationation outputs a string.
