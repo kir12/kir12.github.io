@@ -72,7 +72,7 @@ function trial(input,number) { //takes in global paramets input (triggered by fi
       document.getElementById("winResult").style.display = "block"; //re-enables winning display (see html comments)
       document.getElementById("win").innerHTML = "Great, you win! Here was the winning passcode!"; //tells user s/he has won
       document.getElementById("win2").innerHTML = number; //tells user the number that won
-      document.getElementById("button2").disabled = "false"; //activates second button, which user can use to reset game if s/he wants.
+      document.getElementById("button2").disabled = false; //activates second button, which user can use to reset game if s/he wants.
     }
     else{ //if guess was wrong
       if (tries === 0){ //if first guess
