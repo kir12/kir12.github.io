@@ -40,8 +40,3 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-body {
-	background-image: url("background.jpg") no-repeat center center fixed;
-	background-size: cover;
-}
