@@ -15,10 +15,19 @@
         .jumbotron {
           margin-top: 0px;
         }
-
         .footer{
+          /*
           position: absolute;
           bottom: 0;
+          */
+          background-color: lightgray;
+        }
+        i{
+          padding: .5em;
+        }
+        nav{
+          overflow: auto;
+          height:;
         }
       </style>
       <script></script>
@@ -30,6 +39,7 @@
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <link rel="stylesheet" type="text/css" href="stylesheet.css">
       <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      <script src="https://use.fontawesome.com/bacd74d027.js"></script>
     </head>
 
     <body>
@@ -90,19 +100,14 @@
         <p>There's nothing else here.</p>
       </div>
       <footer class = "footer">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Page 1</a></li>
-              <li><a href="#">Page 2</a></li>
-              <li><a href="#">Page 3</a></li>
-            </ul>
-          </div>
-        </nav>
+        <div class = "container">
+          <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+          <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+          <p><em>"Always borrow money from a pessimist. He won’t expect it back."</em>- Oscar Wilde</p>
+        </div>
       </footer>
     </body>
   </html>
