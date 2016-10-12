@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <meta charset="utf-8">
+    <title>Test 2 Study Guide | AP Computer Science 2016-2017</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- add after bootstrap.min.css -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
+  </head>
+  <body data-spy="scroll" data-target="#toc">>
+    <div class = "jumbotron" style = "text-align: center;">
+      <h1>AP Computer Science 2016-2017</h1>
+      <h2>Exam 2 Study Guide</h2>
+      <p>Brian Lee, Period 1</p>
+    </div>
+    <div class = "container">
+      <div class = "alert alert-warning"><strong>NOTE:</strong> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes and your code first!</div>
+      <div class = "row">
+        <div class = "col-md-9">
+          <div class = "page-header">
+            <h1>Objects and How They Work</h1>
+          </div>
+          <h2>The Big Picture</h2>
+            <small>Click <a href = "#tldr1.1">Here</a> for a TL;DR description of objects and classes.</small>
+            <p>In Java, an <b>object</b> is literally what it says it is: an <em>object</em>. Objects have certain <b>attributes</b> which outline <em>basic details</em> about the object. Objects can also have <b>methods</b> by which objects can <em> do things</em>.</p>
+            <p>To illustrate this, take for example a simple object, like a tape dispenser.</p>
+            <img  class = "img-responsive" src = "img/tapedispenser.jpg" style = "margin-right: auto; margin-left: auto; display: block;">
+            <div style = "text-align: center;"><small>Figure 1: A Tape Dispenser</small></div>
+            <p>The tape dispenser has several <em>basic details</em> about it, such as the <b>amount of tape</b> it has, and can <em> do things</em>, like <b>dispense tape.</b></p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12" style = "text-align: center;"><small>Figure 2: Methods and Attributes</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><p>Attributes</p></div>
+                <div class = "col-md-6"><p>Methods</p></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><img src = "img/rolloftape.jpg" class = "img-responsive" style ="margin: auto;"></div>
+                <div class = "col-md-6"><img src = "img/dispense.jpg" class = "img-responsive" style = "margin: auto;"></div>
+              </div>
+            </div>
+            <p>This tape dispenser is only one kind of tape dispenser out of many- the <em>idea</em> of the tape dispenser illustrates what a <b>class</b> is.</p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12"><small>Figure 3: Classes</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4"><img src = "img/tp1.jpg" class = "img-responsive"></div>
+                <div class = "col-md-4"><img src = "img/tp2.jpg" class = "img-responsive"></div>
+                <div class = "col-md-4"><img src = "img/tp3.jpg" class = "img-responsive"></div>
+              </div>
+            </div>
+            <p id = "tldr1.1">TL;DR: <b>Objects</b> possess both <b>attributes</b> (basic values) and <b>methods</b> (actions the object takes), and are <em>instances</em> of <b>classes</b>, the <em>category</em> of object.</p>
+            <!--Insert big-scale image of objects and classes-->
+          <h2>Benefits of Object-Oriented Programming</h2>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12"><small>Figure 4: Benefits of OOP</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><b>Encapsulation</b></div>
+                <div class = "col-md-6"><b>Code Reusability</b>(Inheritance)</div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><img src = "img/capsule.png" class = "img-responsive"></div>
+                <div class = "col-md-6"><img src = "img/recycle.png" class = "img-responsive"></div>
+              </div>
+              <div class = "row"></div>
+                <div class = "col-md-6"><p>Objects keep all their calculations <b>internal</b>, and interact with outside stuff though <em>methods</em> (specifically parameters)</p></div>
+                <div class = "col-md-6"><p>Code can be <b>reused</b> by simply <em>calling for it</em> (Inheritance is a class <em>inheritng</em> another class's methods)</p></div>
+            </div>
+            <p><b>Polymorphism</b>: different-but-related objects can be used similarly.</p>
+
+          <h2>print/println and Abstraction</h2>
+            <pre class = "prettyprint">
+public class Hello{
+  public static void main(String[] args){
+    System.out.println("Hello World!"); //prints on the NEW LINE
+    System.out.print("hello world"); //prints on the SAME LINE AS BEFORE
+  }
+}
+            </pre>
+            <p><b>Abstraction</b> We can <em>hide</em> the details of an object and work <em>with the object itself</em> (ties into <em>object reusability</em>).</p>
+          <h2>Strings</h2>
+            <h3>Concatonation</h3>
+              <pre class = "prettyprint">
+public class String{
+  public static void main(String[] args){
+    System.out.println("Hello, my name is" + "Brian, and I love strings."); //The String Concatonation Operator adds strings together.
+    System.out.println(); //prints new line
+    System.out.println("Strings can have numbers like this (420) and can be concatonated with numbers, like" + 69)
+    System.out.println("I like chese" + 344 + 45); //concatonation
+    System.out.println("I like cheese" + (345 + 567); //addition then concatonation;
+  }
+}
+              </pre>
+            <h3>Escape Sequences</h3>
+              <p>(Special string characters)</p>
+              <div style = "text-align: center;">
+                <div class = "row">
+                  <div class = "col-md-4"><b>Escape Sequence</b></div>
+                  <div class = "col-md-4"><b>Meaning</b></div>
+                  <div class = "col-md-4"><b>Example</b></div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\n</code></div>
+                  <div class = "col-md-4">newline</div>
+                  <div class = "col-md-4">"I like cheese\nSo do you!"</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\"</code></div>
+                  <div class = "col-md-4">double quote</div>
+                  <div class = "col-md-4">"I like \"cheese\"</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\\</code></div>
+                  <div class = "col-md-4">backslash</div>
+                  <div class = "col-md-4">N/A</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\b</code></div>
+                  <div class = "col-md-4">backspace</div>
+                  <div class = "col-md-4">N/A</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\t</code></div>
+                  <div class = "col-md-4">tab</div>
+                  <div class = "col-md-4">"\tIlike cheese"</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\r</code></div>
+                  <div class = "col-md-4">carriage return</div>
+                  <div class = "col-md-4">"I like \rcheese"</div>
+                </div>
+                <div class = "row">
+                  <div class = "col-md-4"><code>\'</code></div>
+                  <div class = "col-md-4">single quote</div>
+                  <div class = "col-md-4">"I like \'cheese\'</div>
+                </div>
+              </div>
+          <h2>Variables</h2>
+            <p><b>Variables</b> hold pieces of data- they must be <em>initialized</em>, then <em>given values</em>. See here:</p>
+            <pre class = "prettyprint">
+public class VarDemo{
+  public static void main(String[] args){
+    int variable; //Step 1: Initialization- state the TYPE of variable (out of 8 primative types) and the name.
+    variable = 10; //Step 2: Give it a value.
+
+    int variable2 = 11; //you can do it at the same (= is the ASSIGNMENT OPERATOR)
+    int variable3 = 12, variable4 = 13; //you can declare more than one variable at once (not recommended)
+    variable3 = 11; //to redefine values to a previously instantiated variable, just call it again.
+    int error = "hi!"; //this'll give an error- "hi" ain't an int
+
+    final int Constant = 12; //this is called a CONSTANT because it can't change anymore (the final tag)
+                             //constant names are Capitalized to distinguish them.
+  }
+}
+            </pre>
+          <h2>Data Types</h2>
+            <p>There are <b>eight</b> primative data types- 4 integers, 2 floating type, a char, and a boolean. Here's what you needa know for the AP. (Although you definitely shold know about them all)</p>
+            <p><b>NOTE:</b> Strings are very useful, but aren't primative data types- they are strings.</p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-4"><b>Primative Data Types</b></div>
+                <div class = "col-md-4"><b>What It is</b></div>
+                <div class = "col-md-4"><b>Example</b></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Integers</div>
+                <div class = "col-md-4">Self-explanatory- its an integer, and is called an <em>integer literal</em>.</div>
+                <div class = "col-md-4"><code>int answer = 42;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Floating Points (double)</div>
+                <div class = "col-md-4">It's essentially a decimal, and has a <em>floating point literal</em></div>
+                <div class = "col-md-4"><code>double negpi = -3.14;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Booleans</div>
+                <div class = "col-md-4">It holds either <code>true</code> or <code>false</code>-- basically its your logic stuff.</div>
+                <div class = "col-md-4"><code>boolean hillary2016 = false;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Chars</div>
+                <div class = "col-md-4">Characters of ASCII- there are <em>character literals</em> in single quotes</div>
+                <div class = "col-md-4"><code>char topGrade = 'A';</code></div>
+              </div>
+            </div>
+          <h2>Arithmetic</h2>
+            <p><b>Expressions</b> are composed of operators and operands (like any normal expression) that encompass arithmetic and other operators (let's stick with arithmetic for now)</p>
+            <table class = "table">
+              <tr>
+                <th>Precedence Level</th>
+                <th>Operator</th>
+                <th>Operation</th>
+                <th>What It Is</th>
+                <th>Reads</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><code>+</code><br><code>-</code></td>
+                <td>Urnary Plus<br>Urnary Minus</td>
+                <td>It indicates if a number is negative or positive.</td>
+                <td>Right to Left</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><code>*</code><br><code>/</code><br><code>%</code></td>
+                <td>Multiply<br>Divide</br>Remainder</td>
+                <td>Self-explanatory<br>Self-explanatory (NOTE: see below table)<br>Self-Explanatory</td>
+                <td>Left to Right</tr>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><code>+</code><br><code>-</code><br><code>+</code></td>
+                <td>Add<br>Subtract<br>Concatonate Strings</td>
+                <td>Self-Explanatory<br>Self-explanatory<br>put strings together</td>
+                <td>Left To Right</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><code>=</code></td>
+                <td>Variable Assignment</td>
+                <td>Assignment Operator</td>
+                <td>Right to Left</td>
+              </tr>
+            </table>
+          <h2>Data Conversion</h2>
+            <p>Using primative types inevitably requires conversions between them- there are two kinds of conversions:</p>
+            <ul>
+              <li><b>Widening Conversions</b>: Conversions that convert into a primative type of <em> same or higher</em> complexity. Example: <code>int</code> to <code>double</code> (integer -> decimal).<br><div class = "alert alert-success"><b>Note</b>: These are the best conversions because you won't lose any information in the process.</div></li>
+              <li><b>Narrowing Conversions</b>: Conversions that convert into a primative type of <em>lower</em> complexity. Example: <code>double</code> to <code>int</code> (decimal -> integer).<br><div class = "alert alert-danger"><b>Careful!</b> You'll lose information about your values if you use this type of conversion!</div></li>
+              <li><code>boolean</code> doesn't apply here because it can't be converted to another primative type.</li>
+            </ul>
+            <h3>Examples</h3>
+            <pre class = "prettyprint">
+public class Conversions{
+  public static void assignConvert(){
+    double money;
+    int dollars = 5;
+    money = dollars; //dollar's int value gets turned into money's double value
+                     //also an example of Widening Conversions
+  }
+  public static void arithmeticPromotion(){
+    double sum = 5.6;
+    int count = 3;
+    double reuslt = sum / count; //count's int value is converted into double (float) since sum and reuslt is double
+                                 //Note how sum is a float, so the output is a float either way
+  }
+  public static void casting(){
+    int dollars;
+    double money = 5.6;
+    dollars = (int) money; //the desired type of conversion is put next to the var being converted
+                           //also an example of Narrowing Conversions, as the decimal part of money gets chopped off
+                           //has useful applications in rounding
+  }
+}
+            </pre>
+          <h2>Enumerated Types</h2>
+            <p><code>enum</code> is a way to <b>make your own</b>'primative' types.</p>
+            <pre class = "prettyprint">
+public class EnumEx{
+  enum School{Stuy, Bxsci, BkTech, BkLatin, HSMSE, QHSS, StatenTech,} //creates 'type' school with 8 possible types
+  //note: enums are also special 'classes', so you can't define them in a method.
+  public static void main(String[] args){
+    //variables declared under type 'school'
+    School specialized;
+    specialized = School.Bxsci;
+    School trash = School.Stuy;
+    School specialized2 = dozo //this will give an error because 'dozo' wasn't added.
+    System.out.println(specialized + "is better than " + trash + "!");
+}
+            </pre>
+          <h2>Object Creation</h2>
+            <pre class = "prettyprint">
+public class ObjectCreate{
+  public static void varInitializ{
+    int testScore; //this is DECLARATION: making the variable.
+                   //type goes first, then varname (naming conventions apply)
+                   //it has no value, so using right now triggers an error.
+    testScore = 65; //this is INITIAILIZATION: assigning a value.
+                    //you may now use the variable.
+    int testScore2 = 64; //you could have done this too
+  }
+  //page 84 of your textbook has a bunch of String methods, if you're interested.
+  public static void StringEx{
+    String world = new "hello world"; //this is INSTANTIZATION-- you're creating an object of String class (yes it's a string)
+    //this is different from the variables above because world is an object
+    int length = world.length(); //gets world's length-- pretty simple
+    //() indicates it's a method, by the way
+    String world2 = "hello moon"; //this also works, by the way
+    world2[0] = "i"; //we can't do that because strings are IMMUTABLE: its length/chars can't be changed
+    world3 = (world2 + "cheese");//but we can concatonate characters
+  }
+}
+            </pre>
+          <h2>Methods Overview</h2>
+            <p>Just in case.</p>
+            <pre class = "prettyprint">
+//public is tag, class then class name
+public class Name{
+  //public tag, static tag (means you don't need an instanted object), void (no return), method name(parameters);
+  public static void main(String[] args){
+    System.out.println("hello world");
+  }
+}
+            </pre>
+          <h2>Libraries and Packages</h2>
+            <p><small>reminds you about GridWorld, eh? ;)</small></p>
+          <div class = "page-header">
+            <h1>Classes and How They Work</h1>
+              <p>Coming Soon! (I mean, VERY soon!)</p>
+          </div>
+
+        </div>
+        <div class = "col-md-3">
+          <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
