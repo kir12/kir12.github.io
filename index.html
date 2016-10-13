@@ -26,7 +26,7 @@
     </div>
     <div class = "container">
       <div class = "alert alert-warning"><strong>NOTE:</strong> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes and your code first!</div>
-      <div class = "alert alert-warning"><strong>NOTE:</strong> This study is a WORK IN PROGRESS. It's being worked on <em>right now!</em> (Yes, right now)</div>
+      <div class = "alert alert-warning"><strong>NOTE:</strong> This study is a WORK IN PROGRESS. It's being worked on <em>right now!</em> (Yes, right now) If there any errors <em>do not hesitate to tell me!</em></div>
       <div class = "row">
         <div class = "col-md-9">
           <div class = "page-header">
@@ -335,6 +335,25 @@ public class RandomStuff{
 }
             </pre>
             <p>Another good class to know: <code>java.lang.Math</code>.</p>
+          <h2>User Input</h2>
+            <p><code>Scanner</code> is your answer.</p>
+            <pre class = "prettyprint">
+import java.util.Scanner; //imports the Scanner class in. MUST HAVE
+
+public class scannerDemo{
+  public static void main(String[] args){
+    Scanner kb = new Scanner(System.in); //creates a Scanner object with the Scanner constructor.
+    //System.in tells Java it's user input.
+    System.out.println("Please enter a number");
+    int num = kb.nextInt(); //waits for the integer input.
+    //you can enter any type depending on its type-- next[insert type]()
+    System.out.println("The entry was" + num);
+  }
+}
+            </pre>
+            <p>note that if the user inputs the wrong type (e.g. <code>String</code> for an <code>int</code>), the exception <code>Input.Mismatch.Exception</code> appears. You'll learn <b>try and catch loops</b> that take care of that later.</p>
+          <!--<h2>Applets</h2>-->
+
           <div class = "page-header">
             <h1>Classes and How They Work</h1>
               <p>Coming Soon! (I mean, VERY soon!)</p>
