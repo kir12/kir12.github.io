@@ -320,6 +320,21 @@ public class Name{
             </pre>
           <h2>Libraries and Packages</h2>
             <p><small>reminds you about GridWorld, eh? ;)</small></p>
+            <p><b>Class Libraries</b> support program development- by a lot. Example: <code>Scanner</code> and <code>String</code> are both Class Libraries. They're <em>not</em> part of the Java Language, but they're part of the <em>Standard Class Library</em>, and also <b>APIs</b> (Application Programmer Interface). They're grouped into <b>packages</b>, so programmers group classes easily. Example: <code>System</code> is part of <code>java.lang</code>.</p>
+            <p>Asides from <code>java.lang</code> you have to <b>import</b> other classes, like so: <code> import java.util.*</code>. Here's a useful class of <code>java.util</code>: <code>Random</code></p>
+            <pre class = "prettyprint">
+import java.util.Random;
+
+public class RandomStuff{
+  public static main(String)[] args{
+    Random machine = new Random(); //creates the random object
+    int number = machine.nextInt(10); //generates a number from 0 to 9 (a.k.a 10 - 1)
+    double float = machine.nextDouble(); //generates a rnumber from 0 to 1.
+    int scaled = machine.nextInt(10) + 9000; //you can scale numbers, so this line generates numbers from 9000 to 9009.
+  }
+}
+            </pre>
+            <p>Another good class to know: <code>java.lang.Math</code>.</p>
           <div class = "page-header">
             <h1>Classes and How They Work</h1>
               <p>Coming Soon! (I mean, VERY soon!)</p>
