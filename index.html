@@ -537,7 +537,22 @@ public class ConstructorDemo{
   }
 }
               </pre>
-          <!--<h2>Method Overloading</h2>-->      
+          <h2>Method Overloading</h2>
+            <p><b>Method Overloading</b>: multiple methods of thes same name. They're very useful for setting mutliple construtors for the same class.</p>
+            <pre class = "prettyprint">
+class Overload{
+  //the two method1 methods are differentiated via the different METHOD SIGNATURES
+  //easiest way to do this: change up the parameters.
+  static int method1(int metho1, int metho2){
+    System.out.println(metho1 + metho2);
+  }
+  static double method1(double method2, double method3){
+    //these two lines actually print out different println methods designed for different types of values.
+    System.out.println(method2 + method3);
+    System.out.println("Hello world");
+  }
+}
+            </pre>
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
