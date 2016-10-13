@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
     <!-- add after bootstrap.min.js -->
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
   </head>
   <body data-spy="scroll" data-target="#toc">
     <div class = "jumbotron" style = "text-align: center;">
@@ -352,13 +353,17 @@ public class scannerDemo{
 }
             </pre>
             <p>note that if the user inputs the wrong type (e.g. <code>String</code> for an <code>int</code>), the exception <code>Input.Mismatch.Exception</code> appears. You'll learn <b>try and catch loops</b> that take care of that later.</p>
-          <!--<h2>Applets</h2>-->
-
+          <h2>Applets</h2>
+            <p><b>Applets</b>: java programs designed for the web. The biggest difference is that applets don't have a <code>main</code> method, and <code> java.applet.Applet</code> is required. It's something you should just know, but more important is <code>Graphics</code>.</p>
+            <h3>Graphics</h3>
+              <p><code>Graphics</code> is a very useful class for... graphics, that is part of <code>java.awt</code>, a package.</p>
+              <p>Using <code>Graphics</code> is pretty self-explanatory, with one key difference: <b>Graphics objects aren't instantiated like normal objects</b>. Rather it's what's called<em>graphics context</em></p>
+              <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i> This will be covered in bigger length very soon! I promise!</div>
+          
           <div class = "page-header">
             <h1>Classes and How They Work</h1>
-              <p>Coming Soon! (I mean, VERY soon!)</p>
           </div>
-
+          <p>Coming Soon! (I mean, VERY soon!)</p>
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
