@@ -488,8 +488,23 @@ class Book{ //this is a second class in the program.
             </pre>
             <p>Also important is <code>return</code>- it serves two roles in Java. If a method's return type is set to a partiular type (see <code>int</code> in <code>getCurrentPages()</code>), <code>return</code> allows you to return a variable/value <em>of that type</em>. (If you tried returning a string you're getting an error) But if the return type is set to <code>void</code> (see <code>nextPage()</code>), then <code>return</code> <em>exits the program flow out of the method into the next higher-up method.</em>(<code>return</code> has no val/variable next to it cause it's <code>void</code>, otherwise an error gets triggered)</p>
             <p>For example, if <code>nextPage()</code> had a <code>return</code> keyword, it would send the control flow up towards the <code>main(String[] args)</code> method since it <em>called</em> <code>nextPage()</code>.</p>
-            <!--<h3>Parameters</h3>-->
+            <h3>Parameters</h3>
+              <pre class = "prettyprint">
+public class parameterTest{
+  public static void main(String[] args){
+    System.out.println(method1(3.14,4)); //the two numbers represent ACUTAL PARAMETERS
+    //those numbers are the actual numbers that go into the method.
+    //types must match or you're getting an error.
+  }
+  public static int method1(double para1, int para2){ //this is called FORMAL PARAMETERS
+    //these represent the placeholders for the numbers.
 
+    int result = (int)para1 / para2;
+    return result;
+  }
+}
+              </pre>
+            <!--<h3>Pre and Postconditions</h3>-->
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
