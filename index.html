@@ -26,7 +26,7 @@
       <p>Brian Lee, Period 1</p>
     </div>
     <div class = "container">
-      <div class = "alert alert-warning"><strong>NOTE:</strong> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes and your code first!</div>
+      <div class = "alert alert-warning"><strong>NOTE:</strong> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
       <div class = "alert alert-warning"><strong>NOTE:</strong> This study is a WORK IN PROGRESS. It's being worked on <em>right now!</em> (Yes, right now) If there any errors <em>do not hesitate to tell me!</em></div>
       <div class = "row">
         <div class = "col-md-9">
@@ -442,7 +442,7 @@ public class scopeEx{
                 </tr>
               </table>
           <h2>Anatomy of a Method</h2>
-            <p>I'm gonna bring back that Book program from earlier to illustrate how <b>Method Declaration</b> and <b>Program Flow</b>.</p>
+            <p>I'm gonna bring back that Book program from earlier to illustrate how <b>Method Declaration</b> and <b>Program Flow</b> work.</p>
             <pre class = "prettyprint">
 public class BookTest{
   //method syntax: [public/private/protected/none][void/primative type] methodName([primative type] parameter name)
@@ -504,7 +504,29 @@ public class parameterTest{
   }
 }
               </pre>
-            <!--<h3>Pre and Postconditions</h3>-->
+            <h3>Constructors</h3>
+              <pre class = "prettyprint">
+public class ConstructorDemo{
+  private int a;
+  private int b;
+  //constructors differ from methods in that they have the SAME NAME as class, and have no return data type.
+  //even void can't be put down here.
+  //constructors instantiate objects.
+  public ConstructorDemo(int para1, int para2){
+    para1 = a;
+    para2 = b;
+  }
+
+  //methods have return types and have their own names.
+  public static void method1(){
+    System.out.println(a);
+    System.out.println(b);
+    int abc = 1; //this is an example of local data (colloquail with local variable
+    //local data is limited to its method only and can't be used outside.)
+  }
+}
+              </pre>
+
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
