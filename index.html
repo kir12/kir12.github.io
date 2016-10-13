@@ -359,11 +359,89 @@ public class scannerDemo{
               <p><code>Graphics</code> is a very useful class for... graphics, that is part of <code>java.awt</code>, a package.</p>
               <p>Using <code>Graphics</code> is pretty self-explanatory, with one key difference: <b>Graphics objects aren't instantiated like normal objects</b>. Rather it's what's called<em>graphics context</em></p>
               <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i> This will be covered in bigger length very soon! I promise!</div>
-          
+
           <div class = "page-header">
             <h1>Classes and How They Work</h1>
           </div>
-          <p>Coming Soon! (I mean, VERY soon!)</p>
+          <h2>Anatomy of a Class</h2>
+            <pre class = "prettyprint">
+//syntax: [tag] class [ClassName]
+public class BookTest{ //this is the MAIN class because it has the "main function"
+  //method syntax: [public/private/protected/none][void/type] methodName([type] parameter name)
+  public static void main(String[] args){ //this is the syntax for the MAIN method. (best memorize it)
+    Book book1 = new Book(3); //the 'new' operator declares a new object, instantiated from a class.
+    //object declaration syntax: [class] varname = new [class](parameters);
+    for(int i = 1; i<=3; i++){
+      book1.nextPage(); //this calls a method
+      System.out.println(book1.getCurrentPages()); //so does this
+    }
+  }
+}
+
+class Book{ //this is a second class in the program.
+  //these are FIELDS, or INSTANCE VARIABLES (vocab is the same)
+  //note how these are PRIVATE because you're ENCAPSULATING these inside the class.
+  private int numPages;
+  private int currentPages;
+  public Book(int n){//this is called a CONSTRUCTOR, because this sets up the object. more often than not it defines fields.
+    //these lines are giving values to the fields, for other classes to use.
+    numPages = n;
+    currentPages = 1;
+  }
+
+  //these next two methods are called ACCESSOR methods, as you're ACCESSING a field and returning it outside a class.
+  public int getNumPages(){
+    return numPages;
+  }
+  public int getCurrentPages(){
+    return currentPages;
+  }
+
+
+  public void nextPage(){
+    if(currentPages < numPages){
+      currentPages+=1;
+    }
+  }
+}
+            </pre>
+            <h3>Instance Data</h3>
+              <p>Where a variable is <em>declared</em> determines its <b>scope</b>-- where it can be used. Here, take a look.</p>
+              <pre class = "prettyprint">
+public class scopeEx{
+  //these fields have a scope that spans the ENTIRE CLASS, because they're declared outside all methods.
+  //that's the nifty thing about fields, actually because you can toss them around basicaly.
+  private int field1;
+  private String field2;
+  public void method1{
+    int variable1 = 4; //this variable has a scope of the entire method, and can be used by all program/control flows.
+    while(variable1 != 10){
+      variable1+=1;
+      int count = variable1; //this variable has a scope of only inside the while loop, and can't be used outside.
+    }
+    System.out.println(count); //this gives an error because count is in the scope of the while loop.
+  }
+}
+              </pre>
+              <p>Actually, <code>scopeEx</code> illustrates what <b>encapsulation</b> is pretty well. It hides its internal variables (the fields <code>field1</code> and <code>field2</code> from other classes), and does so using the <em>modifier</em> <code>private</code>. There's two other modifiers: <code>public</code> and <code>final</code> (variable value can't be changed any further).</p>
+              <table class = "table table-hover table-bordered">
+                <tr>
+                  <td></td>
+                  <th class = "success">public</th>
+                  <th class = "danger">private</th>
+                </tr>
+                <tr>
+                  <th>Variables</th>
+                  <td>Other classes can access it</td>
+                  <td class = "info">Other classes can't access it</td>
+                </tr>
+                <tr>
+                  <th>Methods</th>
+                  <td>Other clases can use these methods</td>
+                  <td class = "info">Other classes can't use these methods</td>
+                </tr>
+              </table>
+          <!--<h2>Anatomy of a Method</h2>-->
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
