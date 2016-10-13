@@ -504,7 +504,7 @@ public class parameterTest{
   }
 }
               </pre>
-            <h3>Constructors</h3>
+            <h3>Constructors, Accessors & Mutators</h3>
               <pre class = "prettyprint">
 public class ConstructorDemo{
   private int a;
@@ -524,9 +524,20 @@ public class ConstructorDemo{
     int abc = 1; //this is an example of local data (colloquail with local variable
     //local data is limited to its method only and can't be used outside.)
   }
+
+  //accessor methods
+  public int getpara1{ //provides field for an outside method.
+    return para1;
+  }
+
+  //mutator methods
+  public int setpara1(int enter){ //allows outside methods to modify fields
+    para1 = enter;
+    return para1;
+  }
 }
               </pre>
-
+                
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
