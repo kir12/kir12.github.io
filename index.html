@@ -26,8 +26,8 @@
       <p>Brian Lee, Period 1</p>
     </div>
     <div class = "container">
-      <div class = "alert alert-warning"><strong>NOTE:</strong> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
-      <div class = "alert alert-warning"><strong>NOTE:</strong> This study is a WORK IN PROGRESS. It's being worked on <em>right now!</em> (Yes, right now) If there any errors <em>do not hesitate to tell me!</em></div>
+      <div class = "alert alert-warning"><i class="fa fa-info-circle" aria-hidden="true"></i> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
+      <div class = "alert alert-success"><i class="fa fa-check" aria-hidden="true"></i> Most of the work has been done, but there may be a few last minute sections that might be added. If there are any problems/errors/advice encountered, please tell me!</div>
       <div class = "row">
         <div class = "col-md-9">
           <div class = "page-header">
@@ -358,7 +358,7 @@ public class scannerDemo{
             <h3>Graphics</h3>
               <p><code>Graphics</code> is a very useful class for... graphics, that is part of <code>java.awt</code>, a package.</p>
               <p>Using <code>Graphics</code> is pretty self-explanatory, with one key difference: <b>Graphics objects aren't instantiated like normal objects</b>. Rather it's what's called<em>graphics context</em></p>
-              <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i> This will be covered in bigger length very soon! I promise!</div>
+              <div class = "alert alert-warning"><i class="fa fa-times-circle" aria-hidden="true"></i> This topic isn't on the test, but it'll most likely be part of the first project. If you're smart you'll get ahead of the competition.</div>
 
           <div class = "page-header">
             <h1>Classes and How They Work</h1>
@@ -555,6 +555,31 @@ class Overload{
             </pre>
             <h3>Method Decomposition</h3>
               <p>If a method becomes too complicated and windy, you can <em>break it up into smaller methods</em> to make the entire thing easier to operate.</p>
+          <h2>Obect Relationships</h2>
+            <p><b>Use Relationships</b>: classes 'aware' of each other and can use each other. This can apply to objects of different classes, or <em>the same class</em>.</p>
+            <pre class = "prettyprint">
+public class stringDemo2{
+  public static main(String[] args){
+    String hi = "hello world";
+    String bye = "goodbye, world";
+    String concat = hi.concat(bye); //use relationship between Strings hi and bye
+  }
+}
+            </pre>
+            <p><b>Aggregation</b> is often called a <em>has-a</em> relationship, and basically is an object with other objects as fields.</p>
+            <pre class = "prettyprint">
+public class userHandler{
+  Scanner kb; //this field composes of an object of class Scanner.
+  //A constructor using this field would create an object of class Scanner to sub it in.
+  private boolean reloop;
+  private double inputDouble;
+  private int inputInt;
+  public userHandler(){
+    kb = new Scanner(System.in); //see here
+    reloop = true;
+  }
+}
+            </pre>
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
