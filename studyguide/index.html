@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test 3 Study Guide | AP Computer Science 2016-2017</title>
+    <link rel = "stylesheet" href = "stylesheet.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <!-- add after bootstrap.min.css -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
+
+  </head>
+  <body>
+    <div id = "header" class = "jumbotron">
+      <div style = "background: rgba(0,0,0,.2)">
+        <h1><b>AP Computer Science 2016-2017</b></h1>
+        <h2>Test 3 Study Guide</h2>
+        <p>Brian Lee, Period 1</p>
+      </div>
+    </div>
+    <div class = "container">
+      <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
+      <div class = "row">
+        <div class = "col-md-9">
+          <div class = "page-header">
+            <h1>Fields, Variables, and Parameters</h1>
+          </div>
+            <pre class = "prettyprint">
+public class StudentTest
+{
+ public static void main(String args[])
+ {
+  Student stud1 = new Student("Tom", 16);
+  Student stud2 = new Student("Sue", 15);
+  stud1.showData();
+  stud2.showData();
+ }
+}
+Public class Student
+{
+  //these are called FIELDS, and are attributes of objects instantiated from the Student class.
+  //you can also think of them as "placeholders" to be plugged in when the object is created.
+  private String name;
+  private int age;
+
+  //String n and int a these are examples of PAREMETERS, and are placeholders for the programmer to plug in
+  public Student (String n, int a)
+  {
+    name = n + " Cat:";
+    age = a + 100;
+  }
+
+  public void showData()
+  {
+
+    //this is an example of a LOCAL VARIABLE: it exists within the method showData() only
+    //once the program is done with showData(), then oldAge will be deleted
+    int oldAge = 1000;
+
+    for (int k = 1; k < 5; k++)
+    {
+      oldAge = oldAge + age;
+    }
+     System.out.print(name + " " + age + "!  ");
+  }
+}
+            </pre>
+          <div class = "page-header">
+            <h1>Arithmetic</h1>
+          </div>
+            <h2>Primative Data Types</h2>
+              <p><b>Primative Data Types</b>: they represent <em>basic bits of information</em>, and are most commonly seen in <em>local variables</em>. There are eight types, half required by AP CS, half not.</p>
+              <table class = "table">
+                <thead>
+                  <th>AP CS Req'd?</th>
+                  <th>Data Type</th>
+                  <th>Size (Bytes)</th>
+                  <th>Basic Description</th>
+                  <th>Range</th>
+                  <th>Misc. Info</th>
+                </thead>
+                <tr>
+                  <td class = "success">Yes</td>
+                  <td><code>Boolean</code></td>
+                  <td>1</td>
+                  <td>data type for logic, thus has values of <code>true</code> and <code>false</code></td>
+                  <td>N/A</td>
+                  <td>Conversion rules don't apply to <code>boolean</code></td>
+                </tr>
+                <tr>
+                  <td class = "success">Yes</td>
+                  <td><code>char</code></td>
+                  <td>2</td>
+                  <td>it holds <em>characters</em> of the ASCII character chart.</td>
+                  <td>ASCII</td>
+                  <td>Usage: <code>char var1 = 'h';</code></td>
+                </tr>
+                <tr>
+                  <td class = "success">Yes</td>
+                  <td><code>int</code></td>
+                  <td>4</td>
+                  <td>Describes integers. Pretty self-explanatory</td>
+                  <td>-2<sup>31</sup> to 2<sup>31</sup></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class = "success">Yes</td>
+                  <td><code>double</code></td>
+                  <td>8</td>
+                  <td>A type of float, it describes decimals (but it's larger than the data type <code>float</code>)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class = "danger">No</td>
+                  <td><code>byte</code></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class = "danger">No</td>
+                  <td><code>short</code></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class = "danger">No</td>
+                  <td><code>long</code></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class = "danger">No</td>
+                  <td><code>note</code></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+
+        </div>
+        <div class = "col-md-3">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
