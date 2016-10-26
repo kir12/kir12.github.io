@@ -22,12 +22,14 @@
     <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
 
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div id = "header" class = "jumbotron">
-      <div style = "background: rgba(0,0,0,.2)">
+      <div class = "container" style = "background: rgba(0,0,0,.2)">
+        <!--MAKE THIS RESPONSIVE-->
         <h1><b>AP Computer Science 2016-2017</b></h1>
         <h2>Test 3 Study Guide</h2>
         <p>Brian Lee, Period 1</p>
+        <h6>Yes I know this isn't responsive just deal with it</h6>
       </div>
     </div>
     <div class = "container">
@@ -197,13 +199,43 @@ Public class Student
                   <td>Right to Left</td>
                 </tr>
               </table>
-              <p><b>Casting is a way to forcibly convert data types into other data types.</b></p>
-              <!--Examples-->
+              <p><b>Casting</b> is a way to forcibly convert data types into other data types. It's the <em>easiest</em> way to do so, but it' easier to not convert unless needed.</p>
+              <div class = "alert alert-warning"><b>Careful!</b> Narrowing and Widening Conversion rules apply</div>
+              <pre class = "prettyprint">
+public class CastDemo{
+  public static main(String[] args){
+    double thingy = 123;
+    int num1 = 3;
+    double num2 = (double) num1; //converts num1 into a double
+    int result = (int)(thingy / num2); //outputs int because double/double gets converted by (int) cast
+  }
+}
+              </pre>
+            <h2>Compound Assignment and Incrementing</h2>
+              <pre class = "prettyprint">
+public class ArithDemo{
+  public static void main(String[] args){
+    int a = 1;
+    int b = a++; //increments, or adds, a by 1.
+    int c = a--; //decrements, or subracts, a by 1.
+
+    int b = 3;
+    int d = 1;
+    b+=d; //easier way of adding d to b. this is compound assignment
+    //you can fit in + with any of the other operators.
+
+    d += d++; //don't do this- the college board hates this
+  }
+}
+              </pre>
         </div>
         <div class = "col-md-3">
-
+          <nav id="toc" data-toggle="toc" data-spy = "affix"></nav>
         </div>
       </div>
+    </div>
+    <div class = "jumbotron" style = "text-align: center; margin-bottom: 0;">
+      <h1>Thanks for Visiting!</h1>
     </div>
   </body>
 </html>
