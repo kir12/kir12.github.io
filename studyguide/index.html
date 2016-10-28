@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <!--<link rel="stylesheet" type="text/css" href="theme.css">-->
+
+    <meta charset="utf-8">
+    <title>Test 3 Study Guide | AP Computer Science 2016-2017</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <!--<link rel="stylesheet" type="text/css" href="theme.css">-->
+
+    <!--Prettify plugin-->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <!--Font Awesome plugin-->
+    <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
+
+
+
+
+    <!--Bootstrap plugin-->
+
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <meta charset="utf-8">
-    <title>Test 3 Study Guide | AP Computer Science 2016-2017</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- add after bootstrap.min.css -->
+
+    <!--Additional theme-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <!--Bootstrap TOC Plugin-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
     <!-- add after bootstrap.min.js -->
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
-    <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
 
 
 
 
   </head>
   <body data-spy="scroll" data-target="#toc">
-    <div id = "header" class = "jumbotron">
-      <div class = "container" style = "background: rgba(0,0,0,.2)">
-        <!--MAKE THIS RESPONSIVE-->
-        <h1><b>AP Computer Science 2016-2017</b></h1>
-        <h2>Test 3 Study Guide</h2>
-        <p>Brian Lee, Period 1</p>
-        <h6>Yes I know this isn't responsive just deal with it</h6>
-      </div>
+    <div id = "header" class = "jumbotron" style = "text-align: center;">
+      <h1><b>AP Computer Science 2016-2017</b></h1>
+      <h2>Test 3 Study Guide</h2>
+      <p>Brian Lee, Period 1</p>
     </div>
     <div class = "container">
       <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
@@ -229,6 +246,36 @@ public class ArithDemo{
     d += d++; //don't do this- the college board hates this
   }
 }
+              </pre>
+            <h2>String Concatonation</h2>
+              <pre class = "prettyprint">
+public class StringDemo{
+
+  public static void main(String[] args){
+    String a = "hello, world" + 3; //adds, or concatonate, 3 to the end of the string.
+    Strinb b = "hello world" + "9000"; //you could also do this too if you wanted
+  }
+}
+              </pre>
+              <p><code>toString()</code>, by default, returns the <code>String</code> version of the object you input (which itself is pretty useful), but you can override it to <b>influence how <code>System.out.println()</code> works</b>.</p>
+              <pre class = "prettyprint">
+public class ToStringDemo{
+  private int a;
+  private int b;
+  public ToStringDemo(int one, int two){
+    a = one;
+    b = two;
+  }
+  public static void main(String[] args){
+    ToStringDemo thing = new ToStringDemo(2,3);
+    System.out.println(thing); //printing the OBJECT triggers toString
+  }
+  //with this you can AUTOMATICALLY change how your objects get printed out.
+  public String toString(){
+    return a + "and" + b;
+  }
+}
+
               </pre>
         </div>
         <div class = "col-md-3">
