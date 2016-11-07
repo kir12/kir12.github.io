@@ -1,9 +1,17 @@
+.affix{
+  top: 20px;
+}
+
+
+#toper{
+  background-color: rgba(0,0,0,.9);
+}
 #header{
   height: 100vh;
+
   text-align: center;
   background-image: url(img/windows.jpg);
   color: white;
-
 }
 
 #header h1{
