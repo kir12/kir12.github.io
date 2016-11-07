@@ -1,0 +1,18 @@
+body{
+
+}
+
+#header{
+  height: 100vh;
+  background-image: url(img/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header > .container{
+  color: white;
+  width: 25%;
+  vertical-align: bottom;
+  margin-left: 2em;
+  margin-right: auto;
+}
