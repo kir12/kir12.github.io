@@ -1,8 +1,9 @@
-body{
-
+.affix{
+  top: 20px;
 }
 
 #header{
+  top: 20px;
   height: 100vh;
   background-image: url(img/giphy.gif);
   background-repeat: no-repeat;
@@ -15,4 +16,27 @@ body{
   vertical-align: bottom;
   margin-left: 2em;
   margin-right: auto;
+}
+
+
+nav[data-toggle='toc'] {
+  margin-top: 30px;
+}
+
+/* small screens */
+@media (max-width:) {
+  /* override the Affix plugin so that the navigation isn't sticky */
+  nav.affix[data-toggle='toc'] {
+    position: static;
+  }
+
+  /* PICK ONE */
+  /* don't expand nested items, which pushes down the rest of the page when navigating */
+  nav[data-toggle='toc'] .nav .active .nav {
+    display: none;
+  }
+  /* alternatively, if you *do* want the second-level navigation to be shown (as seen on this page on mobile), use this */
+  nav[data-toggle='toc'] .nav .nav {
+    display: block;
+  }
 }
