@@ -71,7 +71,7 @@
           <div class = "page-header">
             <h1>Program Theory</h1>
           </div>
-            <h2>Good Workflow <span class="label label-default">New</span></h2>
+            <h2>Good Workflow</h2>
               <p>There are four major steps to program development.</p>
 
               <div class = "row">
@@ -142,8 +142,61 @@
           </div>
             <h2>Using Booleans and Operators</h2>
 
-            <h2>If-Else Blocks</h2>
-              <h3>Switch Blocks</h3>
+            <h2>If-Else Blocks *<span class="label label-default">New</span>*</h2>
+              <pre class = "prettyprint">
+java class ifDemo{
+  public static void main(String[] args){
+    int n = 0;
+    //Basic Structure: if(condition){stuff to run}
+    if(n = 0){
+      System.out.println("Hello World");
+    }
+    //equivalent of elif in python: another if function that runs if original fails
+    else if (int i = 1){
+      System.out.println("Goodbye world");
+    }
+    //if all preceding if funcitons failed, this runs
+    else{
+      System.out.println("All inputs failed!");
+    }
+  }
+  public static void nestedIf(){
+    boolean test = true;
+    int lenny = 69;
+    if(test){
+      //you can nest if statements into other if statements as necessary
+      if(lenny != 69){
+        System.out.println("ur not lenny today");
+      }
+      else{
+        System.out.println("LENNNYYYYYY");
+      }
+    }
+    else{
+      System.out.println("you're false");
+    }
+  }
+}
+              </pre>
+              <h3>Switch Blocks <span class="label label-default">New</span></h3>
+                <pre class = "prettyprint">
+public class switchTest{
+  public static void main(String[] args){
+    int tester = 8;
+    //basic stucture: switch(thing to test){case of test: run something}
+    switch(tester){
+      //in the possibility tester is 1
+      case 1:
+        System.out.println("number 1!");
+        break; //DONT FORGET BREAK IN YOUR CASES OR ELSE YOUR CASES FALL THROUGH
+      case 2: case 3: case 4: case 5: case 6: case 7: //you can stack cases together for same output
+        System.out.println("Deez nuts");
+      case 8:
+        System.out.println("Fitness Gram Pacer Test");
+    }
+  }
+}
+                </pre>
             <h2>For Blocks</h2>
               <h3>Ieterating</h3>
             <h2>While Blocks</h2>
