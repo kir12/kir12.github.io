@@ -142,7 +142,7 @@
           </div>
             <h2>Using Booleans and Operators</h2>
 
-            <h2>If-Else Blocks *<span class="label label-default">New</span>*</h2>
+            <h2>If-Else Blocks</h2>
               <pre class = "prettyprint">
 java class ifDemo{
   public static void main(String[] args){
@@ -178,7 +178,7 @@ java class ifDemo{
   }
 }
               </pre>
-              <h3>Switch Blocks <span class="label label-default">New</span></h3>
+              <h3>Switch Blocks</h3>
                 <pre class = "prettyprint">
 public class switchTest{
   public static void main(String[] args){
@@ -198,10 +198,55 @@ public class switchTest{
 }
                 </pre>
             <h2>For Blocks</h2>
-              <h3>Ieterating</h3>
-            <h2>While Blocks</h2>
+            <span class="label label-default">New</span>
+              <pre class = "prettyprint">
+public class forDemo{
+  public class main(String[] args){
+    //basic condition: for(starting number; condition each next number must meet; ieteration){statement to be run}
+    for(int i = 1; i <= 10; i++){
+      System.out.println(i);
+    }
 
-            <h2>Nested Loops</h2>
+    int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+    //alternate form of for loop, for ieterating through arrays/ArrayLists
+    for(int i: numbers){
+      System.out.println(i);
+    }
+  }
+}
+              </pre>
+            <h2>While Blocks</h2>
+            <span class="label label-default">New</span>
+              <pre class = "prettyprint">
+public class whileTest{
+  public static void main(String[] args){
+    int i = 0;
+
+    //structure: while(condition to terminate){statements}
+    while(i <= 10){
+      System.out.println(i);
+      i+=1; //have something like this to eventually terminate the while loop
+    }
+
+    while(int i >= 10){
+      System.out.println(i);
+      i--; //be careful! this is an INFINITE LOOP as there's never a point there i >= 10!
+           //you can change it to i++ to make it finite
+           //infinite loops are generally bad bc they run FOREVER and are resource intensive
+    }
+
+    //however infinite loops can be used effectively (sometimes)
+    while(true){
+      if(i % 5 = 0){
+        break; //forcefully terminates your loop
+        //useful to continually keep a while loop going
+        //still be careful, however
+      }
+    }
+  }
+}
+              </pre>
+            <h2>Ieterating & Nested Loops</h2>
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-toggle="toc" data-spy = "affix-top"></nav>
