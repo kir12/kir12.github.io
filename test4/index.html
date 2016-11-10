@@ -198,7 +198,7 @@ public class switchTest{
 }
                 </pre>
             <h2>For Blocks</h2>
-            <span class="label label-default">New</span>
+
               <pre class = "prettyprint">
 public class forDemo{
   public class main(String[] args){
@@ -216,13 +216,13 @@ public class forDemo{
 }
               </pre>
             <h2>While Blocks</h2>
-            <span class="label label-default">New</span>
+
               <pre class = "prettyprint">
 public class whileTest{
   public static void main(String[] args){
     int i = 0;
 
-    //structure: while(condition to terminate){statements}
+    //structure: while(condition to meet){statements}
     while(i <= 10){
       System.out.println(i);
       i+=1; //have something like this to eventually terminate the while loop
@@ -247,6 +247,52 @@ public class whileTest{
 }
               </pre>
             <h2>Ieterating & Nested Loops</h2>
+              <h3>Initialization, Testing, Change</h3>
+              <span class="label label-default">New</span>
+              <p><code>for</code> and <code>while</code> blocks are said to have three phases:</p>
+              <div class = "row">
+                <div class = "col-md-6">
+                  <pre class = "prettyprint">
+while(i<0){
+  System.out.println("Hello World!");
+  i++;
+}
+                  </pre>
+                </div>
+                <div class = "col-md-6">
+                  <pre class = "prettyprint">
+for(int i=1;i<=10;i++){
+  System.out.println(Hello World!);
+}
+                  </pre>
+                </div>
+              </div>
+              <!--organize better-->
+              <table class = "table table-bordered" style = "text-align: center;">
+                <tr>
+                  <td>Type</td>
+                  <td>What it does</td>
+                  <td><code>while</code></td>
+                  <td><code>for</code></td>
+                </tr>
+                <tr>
+                  <td>Initialization</td>
+                  <td>declares a jumping off point to start from</td>
+                  <td><code>while()</code></td>
+                  <td><code>int i = 1;</code></td>
+                </tr>
+                <tr>
+                  <td>Testing</td>
+                  <td>A condition that must be met for the next loop to run</td>
+                  <td><code>i<0</code></td>
+                  <td><code>i<=10</code></td>
+                </tr>
+                <tr>
+                  <td>Change</td>
+                  <td>something that changes so eventually the loop terminates</td>
+                  <td colspan = "2"><code>i++</code></td>
+                </tr>
+              </table>
         </div>
         <div class = "col-md-3">
           <nav id="toc" data-toggle="toc" data-spy = "affix-top"></nav>
