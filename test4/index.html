@@ -51,7 +51,7 @@
 
 
 
-
+    <script src = "hover.js"></script>
   </head>
   <body data-spy="scroll" data-target="#toc">
     <div class = "jumbotron" id = "header">
@@ -135,7 +135,54 @@
               </div>
               <p>These steps aren't <code>static</code>- you'll be in various parts of these as you program.</p>
             <h2>Control Flow</h2>
+            <!--
+              <div class = "row">
+                <div class = "col-md-9">
+                  <pre class = "prettyprint">
+import java.util.Scanner;
 
+public class SphereTest{
+  <div id = "main">
+  public static void main(String[] args){
+    Scanner kb = new Scanner(System.in);
+    System.out.println("what is the radius?");
+    double r = kb.nextInt();
+    Sphere thing = new Sphere(r);
+    System.out.println("Volume: " + thing.getVolume());
+    System.out.println("Surface Area: " + thing.getSurfaceArea())
+  }
+  </div>
+}
+
+class Sphere{
+  private double radius;
+
+  public Sphere(double r){
+    radius = r;
+  }
+  public double getVolume(){
+    return Math.PI * Math.pow(radius,3) * 4/3;
+  }
+  public double getSurfaceArea(){
+    return 4 * Math.PI * Math.pow(radius,2);
+  }
+}
+                  </pre>
+                </div>
+                <div class = "col-md-3">
+                  <div class="panel-group">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" onmousehover = "maintrigger()">
+                        <h4 class="panel-title"><a data-toggle="collapse" href="#collapse1"><code>main</code></a></h4>
+                      </div>
+                      <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">Panel Body</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            -->
             <h2>Algorithims</h2>
           <div class = "page-header">
             <h1>Block Statements</h1>
@@ -303,5 +350,6 @@ for(int i=1;i<=10;i++){
       <h1>Thanks for Visiting!</h1>
     </div>
     <script src = "../studyguide/toc.js"></script>
+
   </body>
 </html>
