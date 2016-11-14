@@ -188,7 +188,89 @@ class Sphere{
             <h1>Block Statements</h1>
           </div>
             <h2>Using Booleans and Operators</h2>
+              <p class = "lead"><b class = "text-success">Equality Operators</b> and <b class = "text-success">Relational Operators</b> <b>compares</b> values.</p>
+              <p>They're useful in <code>while</code> and <code>if</code> blocks, where a statement is <em class = "text-info">tested</em></p>
 
+              <div class = "row">
+                <div class = "col-md-6">
+                  <div class = "prettyprint">
+                    <pre class = "prettyprint">
+public class RelationDemo{
+  public static void main(String[] args){
+    int a = 7;
+    int b = 6;
+
+    //no good- = is for assignments, == comparison
+    if(a = b){
+      System.out.println("7 ate 6");
+    }
+
+    //proper test if equal
+    if(a == b){
+      System.out.println("no one ate each other");
+    }
+    if(a > b){
+      System.out.println("7 ate 6");
+    }
+  }
+}
+                    </pre>
+                  </div>
+                </div>
+                <div class = "col-md-6">
+                  <table class = "table table-hover table-striped" style = "text-align: center;">
+                    <thead>
+                      <th style = "text-align: center;">Operator</th>
+                      <th style = "text-align: center;">Meaning</th>
+                    </thead>
+                    <tr>
+                      <td><code>==</code></td>
+                      <td data-toggle = "tool-tip" title = "Don't confuse with = !" data-placement = "right">equal to</td>
+                    </tr>
+                    <tr>
+                      <td><code>!=</code></td>
+                      <td>not equal to</td>
+                    </tr>
+                    <tr>
+                      <td><code> < </code></td>
+                      <td>less than</td>
+                    </tr>
+                    <tr>
+                      <td><code> <= </code></td>
+                      <td>less than or equal to</td>
+                    </tr>
+                    <tr>
+                      <td><code> > </code></td>
+                      <td>greater than</td>
+                    </tr>
+                    <tr>
+                      <td><code> >= </code></td>
+                      <td>greater than or equal to</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <!--
+              <p class = "lead"><b class = "text-success">Logical Operators</b> act in terms of... logic (yep)</p>
+              <p>They affect how <em>parts</em> of a condition affect the whole condition</p>
+              <div class = "row">
+                <div class = "col-md-6">
+                  <table class = "table table-hover table-striped">
+                    <thead>
+                      <th>Operator</th>
+                      <th>Description</th>
+                    </thead>
+                    <tr>
+                      <td><code>!</code></td>
+                      <td><b>reverses</b> a condition's (evaluated) boolean</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class = "col-md-6">
+
+                </div>
+              </div>
+            -->
             <h2>If-Else Blocks</h2>
               <pre class = "prettyprint">
 java class ifDemo{
