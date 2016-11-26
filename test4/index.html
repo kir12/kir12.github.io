@@ -186,15 +186,15 @@ class Sphere{
             <h2>Algorithims</h2>
               <p class = "lead">Good algorithims do <b>as much as possible</b> by <b>doing the least work possible</b></p>
               <p>Think about what it should do and how it should be structured. Ms Qiu gave three basic standards for good algoritim design</p>
-              <div class = "row" style = "background-color: blue; color: white; text-align: center;">
+              <div class = "row" style = "background-color: #0039A6; color: white; text-align: center;">
                 <div class = "col-md-4">
-                  <h2><b>Compactness</b></h2>
+                  <h2 data-toc-skip><b>Compactness</b></h2>
                 </div>
-                <div class = "col-md-4" style = "background-color: green; color: white;">
-                  <h2><b>Generability</b></h2>
+                <div class = "col-md-4" style = "background-color: #00933C; color: white;">
+                  <h2 data-toc-skip><b>Generability</b></h2>
                 </div>
-                <div class = "col-md-4" style = "background-color: red; color: white;">
-                  <h2><b>Abstractness</b></h2>
+                  <div class = "col-md-4" style = "background-color: #EE352E; color: white;">
+                  <h2 data-toc-skip><b>Abstractness</b></h2>
                 </div>
               </div>
               <div class = "row">
@@ -218,6 +218,69 @@ class Sphere{
                     <li>Java's pretty good at this since the same accross mutliple OSs.</li>
                     <li>But within Java it also means using native libraries, and things that can be easily crossed over</li>
                   </ul>
+                </div>
+              </div>
+            <h2>Examples</h2>
+              <p class = "lead">Yeah so you can't really "summarize" good program design, but Ms. Qiu has <a href = "codingbat.com"> codingbat</a> if you want practice.</p>
+              <p>Anyways here are some examples if you want</p>
+              <blockquote>
+                <p>Given 2 int values greater than 0, return whichever value is nearest to 21 without going over. Return 0 if they both go over.</p>
+                <footer>codingbat <b>blackjack</b> exercise</footer>
+              </blockquote>
+              <div class = "row" style = "text-align: center;">
+                <div class = "col-md-6">Good Design</div>
+                <div class = "col-md-6">Bad Design</div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6">
+                  <pre class = "prettyprint">
+public class Blackjack{
+  public static void main(String[] args){
+    goOver(5,6);
+  }
+  public static int goOver(int a, int b){
+    if(a - 21 > 0 || b - 21 > 0){
+      return 0;
+    }
+    else if ((a - 21) > (b - 21)){
+      return a;
+    }
+    else{
+      return b;
+    }
+  }
+}
+                  </pre>
+                </div>
+                <div class = "col-md-6">
+                  <pre class = "prettyprint">
+public class Blackjack{
+  public static void main(String[] args){
+    goOver(5,6);
+  }
+  public static int goOver(int a, int b){
+    int diffA = a - 21;
+    int diffB = b - 21;
+    if (diffA > 0){
+      if(diffB > diffA){
+        return b;
+      }
+      if(diffB < diffA){
+        reutrn a;
+      }
+    }
+    else if(diffB > 0){
+      if(diff diffB > a){
+        return b;
+      }
+      if(diffA > diffB){
+        return a;
+      }
+    }
+    return 0;
+  }
+}
+                  </pre>
                 </div>
               </div>
           <div class = "page-header">
