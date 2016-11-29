@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
 
 
 
@@ -52,6 +52,7 @@
 
 
     <script src = "hover.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
   <body data-spy="scroll" data-target="#toc">
     <div class = "jumbotron" id = "header">
@@ -221,7 +222,7 @@ class Sphere{
                 </div>
               </div>
             <h2>Examples</h2>
-              <p class = "lead">Yeah so you can't really "summarize" good program design, but Ms. Qiu has <a href = "codingbat.com"> codingbat</a> if you want practice.</p>
+              <p class = "lead">Yeah so you can't really "summarize" good program design, but Ms. Qiu has <a href = "http://www.codingbat.com/java"> codingbat</a> if you want practice.</p>
               <p>Anyways here are some examples if you want</p>
               <blockquote>
                 <p>Given 2 int values greater than 0, return whichever value is nearest to 21 without going over. Return 0 if they both go over.</p>
@@ -287,7 +288,8 @@ public class Blackjack{
             <h1>Block Statements</h1>
           </div>
             <h2>Using Booleans and Operators</h2>
-              <p class = "lead"><b class = "text-success">Equality Operators</b> and <b class = "text-success">Relational Operators</b> <b>compares</b> values.</p>
+              <h3><b>General Operators</b></h3>
+              <p class = "lead"><b class = "text-success">Equality Operators</b> and <b class = "text-success">Relational Operators</b> <b>compare</b> values.</p>
               <p>They're useful in <code>while</code> and <code>if</code> blocks, where a statement is <em class = "text-info">tested</em></p>
 
               <div class = "row">
@@ -307,6 +309,9 @@ public class RelationDemo{
     //proper test if equal
     if(a == b){
       System.out.println("no one ate each other");
+      //runs based on logic status of a == b
+      //if a == b yields true, then this line runs
+      //if a == b yields false, then this line doesn't run
     }
     if(a > b){
       System.out.println("7 ate 6");
@@ -349,27 +354,53 @@ public class RelationDemo{
                   </table>
                 </div>
               </div>
-              <!--
+              <p class = "lead">Don't forget that equality/relational operators have a <b>lower precedence</b> than <b>arithmetic operators</b></p>
+              <p>When in doubt, use <code>( )</code></p>
+              <p class = "small">Click <a href = "http://asi14.github.io/studyguide/#operators-and-casting">here</a> to review Java's arithmetic order of operations</p>
+
               <p class = "lead"><b class = "text-success">Logical Operators</b> act in terms of... logic (yep)</p>
               <p>They affect how <em>parts</em> of a condition affect the whole condition</p>
-              <div class = "row">
-                <div class = "col-md-6">
-                  <table class = "table table-hover table-striped">
-                    <thead>
-                      <th>Operator</th>
-                      <th>Description</th>
-                    </thead>
-                    <tr>
-                      <td><code>!</code></td>
-                      <td><b>reverses</b> a condition's (evaluated) boolean</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class = "col-md-6">
+              <table class = "table">
+                <thead style = "text-align: center;">
+                  <th>Operator</th>
+                  <th>Example</th>
+                  <th>What It Does</th>
+                </thead>
+                <tr>
+                  <td><code>!</code> logical NOT</td>
+                  <td><code>!a</code></td>
+                  <td>Flips the boolean's status (true to false, vice versa)</td>
+                </tr>
+                <tr>
+                  <td><code>&&</code> logical AND</td>
+                  <td><code>a && b</code></td>
+                  <td><p><code>&&</code> is <b>true</b> if a and b are <em>the same</em>, <b>false</b> if a and b are <em>different</em></p></td>
+                </tr>
+                <tr>
+                  <td><code>||</code> logical OR</td>
+                  <td><code>a || b</code></td>
+                  <td><p><b>true</b> if a and b are true, or one of them is true</p></td>
+                </tr>
+              </table>
+              <p><code>&&</code> and <code>||</code> can be <b>short-circuited</b>: if one operand (a or b) yields a boolean, the whole operator is completed</p>
+              <p class = "small">Example: if a becomes true in an <code>||</code> operator, or false in a <code>&&</code> operator</p>
 
-                </div>
-              </div>
-            -->
+              <p class = "lead">Increment/Decrement operators are shorthand for += and -= in the case of 1</p>
+              <p><code>++<code> and <code>--</code><p>
+              <p class = "lead">Assignment Operators add a value to a variable</p>
+              <p><code>val+=5</code> is <code>val = val + 5</code></p>
+              <p>Sub in <code>+</code> with any other operand and you're good</p>
+              <h3><b>Specific Details about Comparisons</b></h3>
+              <p>When comparing chars, keep the <a href = "http://bit.ly/2gCvVU3">Unicode Chart</a> in mind</p>
+              <p>Comparisons such as <code>==</code>, <code> <= </code> use the numbers in the chart to perform operations. It's worth knowing that <b>uppercase letters come before lowercase letters</b> numerically</p>
+              <p class = "small">Depending on the situation, you may make the chars <em>lowercase</em> to simplify comparisons</p>
+              <p class = "lead">Comparing Strings</p>
+              <p><b class = "text-danger">IMPORTANT</b>: use <code>String.equals()</code></p>
+              <p>This compares the <em>actual strings</em>- doing <em>==</em> compares the <em>variables they're assigned to</em></p>
+              <p class = "lead">Comparing Floating Points</p>
+              <p>In Java, 3.00000000001 =/= 3</p>
+              <p>I know, that's harsh</p>
+              <p class = "small">It's advisable to test for equality within a range to ensure these discrepanices go away</p>
             <h2>If-Else Blocks</h2>
               <pre class = "prettyprint">
 java class ifDemo{
@@ -380,29 +411,38 @@ java class ifDemo{
     if(n = 0){
       System.out.println("Hello World");
     }
+
     //equivalent of elif in python: another if function that runs if original fails
     else if (int i = 1){
       System.out.println("Goodbye world");
     }
+
     //if all preceding if funcitons failed, this runs
-    else{
+    else{ //NOTE: else blocks aren't ABSOLUTELY necessary to use if blocks
+          //but you'll most often use them than not
       System.out.println("All inputs failed!");
     }
+    //always use brackets for if blocks, to stay safe
   }
+
   public static void nestedIf(){
-    boolean test = true;
-    int lenny = 69;
-    if(test){
-      //you can nest if statements into other if statements as necessary
-      if(lenny != 69){
-        System.out.println("ur not lenny today");
+    String[] words = {"hello", "cheese", "brian", "computer"}
+    for(String value : words){ //this basically ieterates directly through the array
+                               //don't worry about the syntax too much
+                               //it won't be tested, but is useful
+      if(value.length() < 6){
+        continue; //tells program to get a move on
       }
       else{
-        System.out.println("LENNNYYYYYY");
+        for(char val : value){//ieterates through chars of string
+          if(val == 'e'){
+            System.out.println("there's an e here!");
+          }
+          //this is the important part:
+          //you're evaluting a second condition within another condition
+          //this is pretty powerful if used well
+        }
       }
-    }
-    else{
-      System.out.println("you're false");
     }
   }
 }
@@ -534,4 +574,9 @@ for(int i=1;i<=10;i++){
     <script src = "../studyguide/toc.js"></script>
 
   </body>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+  </script>
 </html>
