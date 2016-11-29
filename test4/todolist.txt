@@ -1,0 +1,5 @@
+To-Do List:
+1) make operators its own section and update to h2s
+2) fix control flow javascript
+3) finish up advanced algorithim design and add one more example
+4) add the first two units of String
