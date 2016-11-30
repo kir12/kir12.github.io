@@ -136,6 +136,7 @@
               </div>
               <p>These steps aren't <code>static</code>- you'll be in various parts of these as you program.</p>
             <h2>Control Flow</h2>
+              <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
             <!--
               <div class = "row">
                 <div class = "col-md-9">
@@ -184,7 +185,7 @@ class Sphere{
                 </div>
               </div>
             -->
-            <h2>Algorithims</h2>
+            <h2>Algorithims and Ieteration</h2>
               <p class = "lead">Good algorithims do <b>as much as possible</b> by <b>doing the least work possible</b></p>
               <p>Think about what it should do and how it should be structured. Ms Qiu gave three basic standards for good algoritim design</p>
               <div class = "row" style = "background-color: #0039A6; color: white; text-align: center;">
@@ -285,10 +286,9 @@ public class Blackjack{
                 </div>
               </div>
           <div class = "page-header">
-            <h1>Block Statements</h1>
+            <h1>Using Booleans and Operators</h1>
           </div>
-            <h2>Using Booleans and Operators</h2>
-              <h3><b>General Operators</b></h3>
+              <h2>Equality and Logical Operators</h2>
               <p class = "lead"><b class = "text-success">Equality Operators</b> and <b class = "text-success">Relational Operators</b> <b>compare</b> values.</p>
               <p>They're useful in <code>while</code> and <code>if</code> blocks, where a statement is <em class = "text-info">tested</em></p>
 
@@ -358,6 +358,7 @@ public class RelationDemo{
               <p>When in doubt, use <code>( )</code></p>
               <p class = "small">Click <a href = "http://asi14.github.io/studyguide/#operators-and-casting">here</a> to review Java's arithmetic order of operations</p>
 
+              <h2>Logical Operators</h2>
               <p class = "lead"><b class = "text-success">Logical Operators</b> act in terms of... logic (yep)</p>
               <p>They affect how <em>parts</em> of a condition affect the whole condition</p>
               <table class = "table">
@@ -384,13 +385,16 @@ public class RelationDemo{
               </table>
               <p><code>&&</code> and <code>||</code> can be <b>short-circuited</b>: if one operand (a or b) yields a boolean, the whole operator is completed</p>
               <p class = "small">Example: if a becomes true in an <code>||</code> operator, or false in a <code>&&</code> operator</p>
-
+              <h2>De Morgan's Law</h2>
+                <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
+              <h2>Other Operators</h2>
               <p class = "lead">Increment/Decrement operators are shorthand for += and -= in the case of 1</p>
               <p><code>++</code> and <code>--</code><p>
               <p class = "lead">Assignment Operators add a value to a variable</p>
               <p><code>val+=5</code> is <code>val = val + 5</code></p>
               <p>Sub in <code>+</code> with any other operand and you're good</p>
-              <h3><b>Specific Details about Comparisons</b></h3>
+
+              <h2>Specific Details about Comparisons</h2>
               <p>When comparing chars, keep the <a href = "http://bit.ly/2gCvVU3">Unicode Chart</a> in mind</p>
               <p>Comparisons such as <code>==</code>, <code> <= </code> use the numbers in the chart to perform operations. It's worth knowing that <b>uppercase letters come before lowercase letters</b> numerically</p>
               <p class = "small">Depending on the situation, you may make the chars <em>lowercase</em> to simplify comparisons</p>
@@ -401,6 +405,18 @@ public class RelationDemo{
               <p>In Java, 3.00000000001 =/= 3</p>
               <p>I know, that's harsh</p>
               <p class = "small">It's advisable to test for equality within a range to ensure these discrepanices go away</p>
+
+          <div class = "page-header">
+            <h1>Strings</h1>
+          </div>
+            <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
+          <div class = "page-header">
+            <h1>Arrays</h1>
+          </div>
+            <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
+          <div class = "page-header">
+            <h1>Block Statements</h1>
+          </div>
             <h2>If-Else Blocks</h2>
               <pre class = "prettyprint">
 java class ifDemo{
