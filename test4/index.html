@@ -413,7 +413,91 @@ public class RelationDemo{
           <div class = "page-header">
             <h1>Arrays</h1>
           </div>
-            <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
+            <h2>Array Indexes</h2>
+              <p class = "lead">Arrays are counted from <code>0</code>, not <code>1</code></p>
+              <p>Each index is a call to a memory location in the array, which itself is an organization of data.</p>
+              <!--index chart-->
+            <h2>Array Declaration and Usage</h2>
+              <p class = "lead">There are a number of easy ways to declare arrays</p>
+              <p>It's worth noting that arrays are <b>"immutable"</b>: immutable in the sense you <em>can't change an array's length once you declare it</em>, but also <em>not</em> because an array's valyes can <b>still be changed</b></p>
+              <p><b class = "text-success">FUN FACT</b>: <code>[]</code> (the index operator) has the <em>highest precedence</em> of all Java operators</p>
+              <pre class = "prettyprint">
+public class ArrayDeclr{
+  public static void main(String[] args){
+    int[] arr1 = {1,2,3,4,5,6}; //this is by far the easiest
+
+    int[] arr2 = new int[5]; //this is the traditional method of declaration
+    //this particular declaration creates an int array 5 units long
+    //int[] doesn't hold the height, but new height[5] does
+
+  }
+  public static arrayUsageEx(){
+    int[] arr3 = new int[6];
+    for(int i = 0; i< arr3.length; i++){
+      arr3[i] = i; //this is how you change specific array values
+      //no matter how complex your algorithim, it will have some variation of this line
+      arr3[i]++; //it's also applicable to other operators (stick with what you know)
+    }
+
+    System.out.println(arr3[7]);
+    //this triggers an IndexOutOfBounds exception
+    //it says that the index you entered has no number in the array
+    //be careful how you manage indexes
+  }
+}
+              </pre>
+            <h2>Higher-Level Usage</h2>
+              <h3><b>Arrays as Paremeters</b></h3>
+                <pre class = "prettyprint">
+public class ArrayParameter{
+  public static void main(String[] args){//the MAIN METHOD has a String[] parameter!!!
+    int[] abc = {1,2,3,4,5};
+    print(abc); //easy as that
+  }
+  public static int print(int[] arr){ //it basically takes in the whole array as a paremeter
+    for(int a : arr){ //for-each loop
+      System.out.println(a);
+    }
+  }
+}
+                </pre>
+              <h3><b>Arrays of Objects</b></h3>
+              <p>a.k.a. using String arrays- chances are this won't be tested in detail on the test, but conceptually arrays of objects are the same as any other array, except the values are now objects</p>
+              <pre class = "prettyprint">
+public class StringArray{
+  public static void main(String[] args){
+    String[] abc = {"hi", "my", "name", "is", "brian"}; //easy
+  }
+}
+              </pre>
+            <h2>Item Searching</h2>
+              <p class = "lead"><b>linear searching</b> is the basic technique used for searching through arrays</p>
+              <p>You literally look through each value of the array and compare each value with whatever you're doing in the algoritihm</p>
+              <pre class = "prettyprint">
+import java.util.Scanner;
+
+public class LinearTest{ //in this example checks if user input is in array
+  public static void main(String[] args){
+    Scanner kb = new Scanner(System.in);
+    System.out.println("Enter a number");
+    int num = kb.nextInt();
+    boolean isPres = false; indicator of true or false
+    int[] thing = {1,2,3,4,5,6,7,8,9,10};
+    for(int a : thing){ //linear search algoritihims usually have for loops
+      if(num == a){
+        isPres = true;
+      }
+    }
+    if(isPres){System.out.println("You won!");}
+  }
+}
+              </pre>
+              <p class = "lead"><b>Binary Searching</b> exploits an array's value's <em>order</em> to find values</p>
+              <p>Basically, keep checking the middle parts of an array to see if the desired value is less than/greater than the middle array, and narrow down boundaries until you get one or two numbers. At that point the program can easily tell if your desired number is present.</p>
+              <p><b class = "text-danger">Warning</b>: This works only if you know your array's value's values are arranged in an order. If you don't know for sure, use linear searches</p>
+              <!--needs cahrt-->
+            <h2>Sorting</h2>
+              <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
           <div class = "page-header">
             <h1>Block Statements</h1>
           </div>
