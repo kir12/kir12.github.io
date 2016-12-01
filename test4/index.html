@@ -454,6 +454,22 @@ public class StringMethods{
     System.out.println(Str1.indexOf("I")); //this gets the FIRST INSTANCE of "I"
     System.out.println(Str1.indexOf("I",2)); //tells Java to start looking from index 2
     System.out.println(Str1.LastindexOf("g")); //finds the LAST INSTANCE of "g"
+
+    System.out.println(Str1.compareTo(str2)); //compares if one is "higher" up than the other
+    //in this case it'll output 0 because the strings are the same
+    //but normally it'll output how much higher a string is (Unicode chart)
+
+    Str4 = " The FitnessGram Pacer Test ";
+    System.out.println(Str4.trim()); //trims leading and ending whitespace- simple!
+
+    System.out.println(Str4.toUpperCase()); //makes all letters uppercase
+    System.out.println(Str4.toLowerCase()); //makes all letters lowercase
+
+    int num = 5;
+    String Str5 = Str5.valueOf(num); //converts num into string format
+    //parseInt(String num) does this in reverse for string to input
+
+    
   }
 }
                 </pre>
