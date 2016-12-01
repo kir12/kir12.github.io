@@ -416,6 +416,47 @@ public class RelationDemo{
           <div class = "page-header">
             <h1>Strings</h1>
           </div>
+            <h2>Initialization/Declaration and Basic Usage</h2>
+              <p class = "lead">Array's indexing system is the same as String's indexing system</p>
+              <p>The biggest difference is that strings are <b>truly</b> immutable, that they <em>cannot</em> be changed once they're officially used.</p>
+              <p>Here's a few ways to declare/initialize a string</p>
+              <pre class = "prettyprint">
+public class StringDeclr{
+  public static void main(String[] args){
+    String str1 = "i am a goat"; //this is as simple as it gets
+    String str2 = "" //if you wanted an empty string
+    String str3; //this is different from str2, because str3 has NULL
+  }
+}
+              </pre>
+              <p class = "lead">Strings have a buttload of methods that are very useful- the best way to get to know them is to use them</p>
+              <p>coding bat ;)</p>
+              <pre class = "prettyprint">
+public class StringMethods{
+  public static void main(String[] args){
+    String Str1 = "I am a goat";
+    String Str1 = Str2;
+    String Str3 = "I am a goat";
+    System.out.println(Str1 == Str2);
+    //this yields true because Str1 and Str2 point to the same var.
+    //this is better for MEMORY LOCATIONS, not ACTUAL STRINGS
+    System.out.prrintln(Str1.equals(Str3));
+    //String.equals() compares the ACTUAL STRINGS- using Str2 here necessarily work
+
+    System.out.println(Str1.charAt(2)); //this gets the char at index 2
+    //same rules about indexes and bounds apply
+
+    System.out.println(Str1.subString(2)); //gets the part of the string from index 2 to the end
+    //if you add a second number it takes the string stuff between the two indexes
+    System.out.println(str1.subString(2,4));
+
+    System.out.println(Str1.indexOf("I")); //this gets the FIRST INSTANCE of "I"
+    System.out.println(Str1.indexOf("I",2)); //tells Java to start looking from index 2
+    System.out.println(Str1.LastindexOf("g")); //finds the LAST INSTANCE of "g"
+
+  }
+}
+              </pre>
             <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
           <div class = "page-header">
             <h1>Arrays</h1>
