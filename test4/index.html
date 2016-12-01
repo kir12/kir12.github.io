@@ -375,7 +375,7 @@ public class RelationDemo{
                 <tr>
                   <td><code>&&</code> logical AND</td>
                   <td><code>a && b</code></td>
-                  <td><p><code>&&</code> is <b>true</b> if a and b are <em>the same</em>, <b>false</b> if a and b are <em>different</em></p></td>
+                  <td><p><code>&&</code> is <b>true</b> if a and b are <em>the same and true</em>, <b>false</b> if a and b are <em>different</em></p></td>
                 </tr>
                 <tr>
                   <td><code>||</code> logical OR</td>
@@ -390,8 +390,8 @@ public class RelationDemo{
                 <p class = "lead">Basically it says the negation of a logical operator (<code>&&</code> and <code>||</code>) yields the negation of the <b>individual operators</b></p>
                 <p>Most problems of this caliber will be multiple choice problems that ask you to simplify a java statement. My bet is that it'll be regarding negations in <code>a</code> or <code>b</code> specifically.</p>
                 <pre class = "prettyprint">
-!(a&&b) == !a && !b
-!(a || b) == !a || !b
+!(a&&b) == !a || !b
+!(a || b) == !a @@ !b
                 </pre>
 
               <h2>Other Operators</h2>
@@ -439,7 +439,8 @@ public class ArrayDeclr{
 
   }
   public static arrayUsageEx(){
-    int[] arr3 = new int[6];
+    int[] arr3 = new int[6]; //initializes a 6 unit array with unit 0
+    //String[] arrays initialize as null, boolean[] as false
     for(int i = 0; i< arr3.length; i++){
       arr3[i] = i; //this is how you change specific array values
       //no matter how complex your algorithim, it will have some variation of this line
@@ -447,9 +448,22 @@ public class ArrayDeclr{
     }
 
     System.out.println(arr3[7]);
-    //this triggers an IndexOutOfBounds exception
+    //this triggers an ArrayIndexOutOfBounds exception
     //it says that the index you entered has no number in the array
     //be careful how you manage indexes
+
+    System.out.println(arr3.length);
+    //prints out amount of values in arr3- very useful attribute
+    //NOTE: this is NOT a method, but a constant, so NO PARENTHESIS
+    //(string's length uses parenthesis)
+
+    System.out.println(arr3.indexOf(7));
+    //this checks for the FIRST occurance of the desired val, and returns its index
+    //in this case 7 isn't in arr3, so this method returns a -1.
+
+    System.out.println(arr3.lastIndexOf(6));
+    //this would be if you wanted the LAST occurance of your val
+    //in this case because 6 is in arr3, it yields 5, the last index of arr3
   }
 }
               </pre>
