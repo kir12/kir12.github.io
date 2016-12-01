@@ -385,8 +385,15 @@ public class RelationDemo{
               </table>
               <p><code>&&</code> and <code>||</code> can be <b>short-circuited</b>: if one operand (a or b) yields a boolean, the whole operator is completed</p>
               <p class = "small">Example: if a becomes true in an <code>||</code> operator, or false in a <code>&&</code> operator</p>
+
               <h2>De Morgan's Law</h2>
-                <div class = "alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This section is still under construction. Sorry!</div>
+                <p class = "lead">Basically it says the negation of a logical operator (<code>&&</code> and <code>||</code>) yields the negation of the <b>individual operators</b></p>
+                <p>Most problems of this caliber will be multiple choice problems that ask you to simplify a java statement. My bet is that it'll be regarding negations in <code>a</code> or <code>b</code> specifically.</p>
+                <pre class = "prettyprint">
+!(a&&b) == !a && !b
+!(a || b) == !a || !b
+                </pre>
+
               <h2>Other Operators</h2>
               <p class = "lead">Increment/Decrement operators are shorthand for += and -= in the case of 1</p>
               <p><code>++</code> and <code>--</code><p>
