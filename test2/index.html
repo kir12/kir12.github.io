@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <meta charset="utf-8">
+    <title>Test 2 Study Guide | AP Computer Science 2016-2017</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <!-- add after bootstrap.min.css -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
+    <script src="https://use.fontawesome.com/232a2abfd0.js"></script>
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+    <div class = "jumbotron" style = "text-align: center;">
+      <h1>AP Computer Science 2016-2017</h1>
+      <h2>Exam 2 Study Guide</h2>
+      <p>Brian Lee, Period 1</p>
+    </div>
+    <div class = "container">
+      <div class = "alert alert-info"><i class="fa fa-info-circle" aria-hidden="true"></i> The Test 3 study guide is being worked on and will be posted soon!</div>
+      <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This study guide is adapted off the textbook as an ultra-concise summary of it, and is meant for last-minute crammers. Study your notes, your code, and the group question list first!</div>
+      <div class = "alert alert-success"><i class="fa fa-check" aria-hidden="true"></i> Most of the work has been done, but there may be a few last minute sections that might be added. If there are any problems/errors/advice encountered, please tell me!</div>
+      <div class = "row">
+        <div class = "col-md-9">
+          <div class = "page-header">
+            <h1>Objects and How They Work</h1>
+          </div>
+          <h2>The Big Picture</h2>
+            <small>Click <a href = "#tldr1.1">Here</a> for a TL;DR description of objects and classes.</small>
+            <p>In Java, an <b>object</b> is literally what it says it is: an <em>object</em>. Objects have certain <b>attributes</b> which outline <em>basic details</em> about the object. Objects can also have <b>methods</b> by which objects can <em> do things</em>.</p>
+            <p>To illustrate this, take for example a simple object, like a tape dispenser.</p>
+            <img  class = "img-responsive" src = "img/tapedispenser.jpg" style = "margin-right: auto; margin-left: auto; display: block;">
+            <div style = "text-align: center;"><small>Figure 1: A Tape Dispenser</small></div>
+            <p>The tape dispenser has several <em>basic details</em> about it, such as the <b>amount of tape</b> it has, and can <em> do things</em>, like <b>dispense tape.</b></p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12" style = "text-align: center;"><small>Figure 2: Methods and Attributes</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><p>Attributes</p></div>
+                <div class = "col-md-6"><p>Methods</p></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><img src = "img/rolloftape.jpg" class = "img-responsive" style ="margin: auto;"></div>
+                <div class = "col-md-6"><img src = "img/dispense.jpg" class = "img-responsive" style = "margin: auto;"></div>
+              </div>
+            </div>
+            <p>This tape dispenser is only one kind of tape dispenser out of many- the <em>idea</em> of the tape dispenser illustrates what a <b>class</b> is, a <em>blueprint for the tape dispenser.</em></p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12"><small>Figure 3: Classes</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4"><img src = "img/tp1.jpg" class = "img-responsive"></div>
+                <div class = "col-md-4"><img src = "img/tp2.jpg" class = "img-responsive"></div>
+                <div class = "col-md-4"><img src = "img/tp3.jpg" class = "img-responsive"></div>
+              </div>
+            </div>
+            <p id = "tldr1.1">TL;DR: <b>Objects</b> possess both <b>attributes</b> (basic values) and <b>methods</b> (actions the object takes), and are <em>instances</em> of <b>classes</b>, the <em>category</em> of object.</p>
+            <!--Insert big-scale image of objects and classes-->
+          <h2>Benefits of Object-Oriented Programming</h2>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-12"><small>Figure 4: Benefits of OOP</small></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><b>Encapsulation</b></div>
+                <div class = "col-md-6"><b>Code Reusability</b>(Inheritance)</div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-6"><img src = "img/capsule.png" class = "img-responsive"></div>
+                <div class = "col-md-6"><img src = "img/recycle.png" class = "img-responsive"></div>
+              </div>
+              <div class = "row"></div>
+                <div class = "col-md-6"><p>Objects keep all their calculations <b>internal</b>, and interact with outside stuff though <em>methods</em> (specifically parameters)</p></div>
+                <div class = "col-md-6"><p>Code can be <b>reused</b> by simply <em>calling for it</em> (Inheritance is a class <em>inheritng</em> another class's methods)</p></div>
+            </div>
+            <p><b>Polymorphism</b>: different-but-related objects can be used similarly.</p>
+
+          <h2>print/println and Abstraction</h2>
+            <pre class = "prettyprint">
+public class Hello{
+  public static void main(String[] args){
+    System.out.println("Hello World!"); //prints on the NEW LINE
+    System.out.print("hello world"); //prints on the SAME LINE AS BEFORE
+  }
+}
+            </pre>
+            <p><b>Abstraction</b> We can <em>hide</em> the details of an object and work <em>with the object itself</em> (ties into <em>object reusability</em>).</p>
+          <h2>Strings</h2>
+            <h3>Concatonation</h3>
+              <pre class = "prettyprint">
+public class String{
+  public static void main(String[] args){
+    System.out.println("Hello, my name is" + "Brian, and I love strings."); //The String Concatonation Operator adds strings together.
+    System.out.println(); //prints new line
+    System.out.println("Strings can have numbers like this (420) and can be concatonated with numbers, like" + 69)
+    System.out.println("I like chese" + 344 + 45); //concatonation
+    System.out.println("I like cheese" + (345 + 567); //addition then concatonation;
+  }
+}
+              </pre>
+            <h3>Escape Sequences</h3>
+              <p>(Special string characters)</p>
+              <table class = "table table-hover">
+                <thead>
+                  <th>Escape Sequence</th>
+                  <th>Meaning</th>
+                  <th>Example</th>
+                </thead>
+                <tr>
+                  <td><code>\n</code></td>
+                  <td>newline</td>
+                  <td>"I like chese\nSo do you!"</td>
+                </tr>
+                <tr>
+                  <td><code>\"</code></td>
+                  <td>double quotes</td>
+                  <td>I like \"cheese</td>
+                </tr>
+                <tr>
+                  <td><code>\\</code></td>
+                  <td>backslash</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td><code>\b</code></td>
+                  <td>backspace</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <td><code>\t</code></td>
+                  <td>tab</td>
+                  <td>"\tI like cheese"</td>
+                </tr>
+                <tr>
+                  <td><code>\r</code></td>
+                  <td>Carriage Return</td>
+                  <td>"I like \r cheese"</td>
+                </tr>
+                <tr>
+                  <td><code>\'</code></td>
+                  <td>single quote</td>
+                  <td>I like \'cheese\'</td>
+                </tr>
+              </table>
+          <h2>Variables</h2>
+            <p><b>Variables</b> hold pieces of data- they must be <em>initialized</em>, then <em>given values</em>. See here:</p>
+            <pre class = "prettyprint">
+public class VarDemo{
+  public static void main(String[] args){
+    int variable; //Step 1: Initialization- state the TYPE of variable (out of 8 primative types) and the name.
+    variable = 10; //Step 2: Give it a value.
+
+    int variable2 = 11; //you can do it at the same (= is the ASSIGNMENT OPERATOR)
+    int variable3 = 12, variable4 = 13; //you can declare more than one variable at once (not recommended)
+    variable3 = 11; //to redefine values to a previously instantiated variable, just call it again.
+    int error = "hi!"; //this'll give an error- "hi" ain't an int
+
+    final int Constant = 12; //this is called a CONSTANT because it can't change anymore (the final tag)
+                             //constant names are Capitalized to distinguish them.
+  }
+}
+            </pre>
+          <h2>Data Types</h2>
+            <p>There are <b>eight</b> primative data types- 4 integers, 2 floating type, a char, and a boolean. Here's what you needa know for the AP. (Although you definitely shold know about them all)</p>
+            <p><b>NOTE:</b> Strings are very useful, but aren't primative data types- they are strings.</p>
+            <div style = "text-align: center;">
+              <div class = "row">
+                <div class = "col-md-4"><b>Primative Data Types</b></div>
+                <div class = "col-md-4"><b>What It is</b></div>
+                <div class = "col-md-4"><b>Example</b></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Integers</div>
+                <div class = "col-md-4">Self-explanatory- its an integer, and is called an <em>integer literal</em>.</div>
+                <div class = "col-md-4"><code>int answer = 42;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Floating Points (double)</div>
+                <div class = "col-md-4">It's essentially a decimal, and has a <em>floating point literal</em></div>
+                <div class = "col-md-4"><code>double negpi = -3.14;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Booleans</div>
+                <div class = "col-md-4">It holds either <code>true</code> or <code>false</code>-- basically its your logic stuff.</div>
+                <div class = "col-md-4"><code>boolean hillary2016 = false;</code></div>
+              </div>
+              <div class = "row">
+                <div class = "col-md-4">Chars</div>
+                <div class = "col-md-4">Characters of ASCII- there are <em>character literals</em> in single quotes</div>
+                <div class = "col-md-4"><code>char topGrade = 'A';</code></div>
+              </div>
+            </div>
+          <h2>Arithmetic</h2>
+            <p><b>Expressions</b> are composed of operators and operands (like any normal expression) that encompass arithmetic and other operators (let's stick with arithmetic for now)</p>
+            <table class = "table">
+              <tr>
+                <th>Precedence Level</th>
+                <th>Operator</th>
+                <th>Operation</th>
+                <th>What It Is</th>
+                <th>Reads</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><code>+</code><br><code>-</code></td>
+                <td>Urnary Plus<br>Urnary Minus</td>
+                <td>It indicates if a number is negative or positive.</td>
+                <td>Right to Left</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><code>*</code><br><code>/</code><br><code>%</code></td>
+                <td>Multiply<br>Divide</br>Remainder</td>
+                <td>Self-explanatory<br>Self-explanatory (NOTE: see below table)<br>Self-Explanatory</td>
+                <td>Left to Right</tr>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><code>+</code><br><code>-</code><br><code>+</code></td>
+                <td>Add<br>Subtract<br>Concatonate Strings</td>
+                <td>Self-Explanatory<br>Self-explanatory<br>put strings together</td>
+                <td>Left To Right</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><code>=</code></td>
+                <td>Variable Assignment</td>
+                <td>Assignment Operator</td>
+                <td>Right to Left</td>
+              </tr>
+            </table>
+          <h2>Data Conversion</h2>
+            <p>Using primative types inevitably requires conversions between them- there are two kinds of conversions:</p>
+            <ul>
+              <li><b>Widening Conversions</b>: Conversions that convert into a primative type of <em> same or higher</em> complexity. Example: <code>int</code> to <code>double</code> (integer -> decimal).<br><div class = "alert alert-success"><b>Note</b>: These are the best conversions because you won't lose any information in the process.</div></li>
+              <li><b>Narrowing Conversions</b>: Conversions that convert into a primative type of <em>lower</em> complexity. Example: <code>double</code> to <code>int</code> (decimal -> integer).<br><div class = "alert alert-danger"><b>Careful!</b> You'll lose information about your values if you use this type of conversion!</div></li>
+              <li><code>boolean</code> doesn't apply here because it can't be converted to another primative type.</li>
+            </ul>
+            <h3>Examples</h3>
+            <pre class = "prettyprint">
+public class Conversions{
+  public static void assignConvert(){
+    double money;
+    int dollars = 5;
+    money = dollars; //dollar's int value gets turned into money's double value
+                     //also an example of Widening Conversions
+  }
+  public static void arithmeticPromotion(){
+    double sum = 5.6;
+    int count = 3;
+    double reuslt = sum / count; //count's int value is converted into double (float) since sum and reuslt is double
+                                 //Note how sum is a float, so the output is a float either way
+  }
+  public static void casting(){
+    int dollars;
+    double money = 5.6;
+    dollars = (int) money; //the desired type of conversion is put next to the var being converted
+                           //also an example of Narrowing Conversions, as the decimal part of money gets chopped off
+                           //has useful applications in rounding
+  }
+}
+            </pre>
+          <h2>Enumerated Types</h2>
+            <p><code>enum</code> is a way to <b>make your own</b>'primative' types.</p>
+            <pre class = "prettyprint">
+public class EnumEx{
+  enum School{Stuy, Bxsci, BkTech, BkLatin, HSMSE, QHSS, StatenTech,} //creates 'type' school with 8 possible types
+  //note: enums are also special 'classes', so you can't define them in a method.
+  public static void main(String[] args){
+    //variables declared under type 'school'
+    School specialized;
+    specialized = School.Bxsci;
+    School trash = School.Stuy;
+    School specialized2 = dozo //this will give an error because 'dozo' wasn't added.
+    System.out.println(specialized + "is better than " + trash + "!");
+}
+            </pre>
+          <h2>Object Creation</h2>
+            <pre class = "prettyprint">
+public class ObjectCreate{
+  public static void varInitializ{
+    int testScore; //this is DECLARATION: making the variable.
+                   //type goes first, then varname (naming conventions apply)
+                   //it has no value, so using right now triggers an error.
+    testScore = 65; //this is INITIAILIZATION: assigning a value.
+                    //you may now use the variable.
+    int testScore2 = 64; //you could have done this too
+  }
+  //page 84 of your textbook has a bunch of String methods, if you're interested.
+  public static void StringEx{
+    String world = new "hello world"; //this is INSTANTIZATION-- you're creating an object of String class (yes it's a string)
+    //this is different from the variables above because world is an object
+    int length = world.length(); //gets world's length-- pretty simple
+    //() indicates it's a method, by the way
+    String world2 = "hello moon"; //this also works, by the way
+    world2[0] = "i"; //we can't do that because strings are IMMUTABLE: its length/chars can't be changed
+    world3 = (world2 + "cheese");//but we can concatonate characters
+  }
+}
+            </pre>
+          <h2>Methods Overview</h2>
+            <p>Just in case.</p>
+            <pre class = "prettyprint">
+//public is tag, class then class name
+public class Name{
+  //public tag, static tag (means you don't need an instanted object), void (no return), method name(parameters);
+  public static void main(String[] args){
+    System.out.println("hello world");
+  }
+}
+            </pre>
+          <h2>Libraries and Packages</h2>
+            <p><small>reminds you about GridWorld, eh? ;)</small></p>
+            <p><b>Class Libraries</b> support program development- by a lot. Example: <code>Scanner</code> and <code>String</code> are both Class Libraries. They're <em>not</em> part of the Java Language, but they're part of the <em>Standard Class Library</em>, and also <b>APIs</b> (Application Programmer Interface). They're grouped into <b>packages</b>, so programmers group classes easily. Example: <code>System</code> is part of <code>java.lang</code>.</p>
+            <p>Asides from <code>java.lang</code> you have to <b>import</b> other classes, like so: <code> import java.util.*</code>. Here's a useful class of <code>java.util</code>: <code>Random</code></p>
+            <pre class = "prettyprint">
+import java.util.Random;
+
+public class RandomStuff{
+  public static main(String)[] args{
+    Random machine = new Random(); //creates the random object
+    int number = machine.nextInt(10); //generates a number from 0 to 9 (a.k.a 10 - 1)
+    double float = machine.nextDouble(); //generates a rnumber from 0 to 1.
+    int scaled = machine.nextInt(10) + 9000; //you can scale numbers, so this line generates numbers from 9000 to 9009.
+  }
+}
+            </pre>
+            <p>Another good class to know: <code>java.lang.Math</code>.</p>
+          <h2>User Input</h2>
+            <p><code>Scanner</code> is your answer.</p>
+            <pre class = "prettyprint">
+import java.util.Scanner; //imports the Scanner class in. MUST HAVE
+
+public class scannerDemo{
+  public static void main(String[] args){
+    Scanner kb = new Scanner(System.in); //creates a Scanner object with the Scanner constructor.
+    //System.in tells Java it's user input.
+    System.out.println("Please enter a number");
+    int num = kb.nextInt(); //waits for the integer input.
+    //you can enter any type depending on its type-- next[insert type]()
+    System.out.println("The entry was" + num);
+  }
+}
+            </pre>
+            <p>note that if the user inputs the wrong type (e.g. <code>String</code> for an <code>int</code>), the exception <code>Input.Mismatch.Exception</code> appears. You'll learn <b>try and catch loops</b> that take care of that later.</p>
+          <h2>Applets</h2>
+            <p><b>Applets</b>: java programs designed for the web. The biggest difference is that applets don't have a <code>main</code> method, and <code> java.applet.Applet</code> is required. It's something you should just know, but more important is <code>Graphics</code>.</p>
+            <h3>Graphics</h3>
+              <p><code>Graphics</code> is a very useful class for... graphics, that is part of <code>java.awt</code>, a package.</p>
+              <p>Using <code>Graphics</code> is pretty self-explanatory, with one key difference: <b>Graphics objects aren't instantiated like normal objects</b>. Rather it's what's called<em>graphics context</em></p>
+              <div class = "alert alert-warning"><i class="fa fa-times-circle" aria-hidden="true"></i> This topic isn't on the test, but it'll most likely be part of the first project. If you're smart you'll get ahead of the competition.</div>
+
+          <div class = "page-header">
+            <h1>Classes and How They Work</h1>
+          </div>
+          <h2>Anatomy of a Class</h2>
+            <pre class = "prettyprint">
+//syntax: [tag] class [ClassName]
+public class BookTest{ //this is the MAIN class because it has the "main function"
+  //method syntax: [public/private/protected/none][void/type] methodName([type] parameter name)
+  public static void main(String[] args){ //this is the syntax for the MAIN method. (best memorize it)
+    Book book1 = new Book(3); //the 'new' operator declares a new object, instantiated from a class.
+    //object declaration syntax: [class] varname = new [class](parameters);
+    for(int i = 1; i<=3; i++){
+      book1.nextPage(); //this calls a method
+      System.out.println(book1.getCurrentPages()); //so does this
+    }
+  }
+}
+
+class Book{ //this is a second class in the program.
+  //these are FIELDS, or INSTANCE VARIABLES (vocab is the same)
+  //note how these are PRIVATE because you're ENCAPSULATING these inside the class.
+  private int numPages;
+  private int currentPages;
+  public Book(int n){//this is called a CONSTRUCTOR, because this sets up the object. more often than not it defines fields.
+    //these lines are giving values to the fields, for other classes to use.
+    numPages = n;
+    currentPages = 1;
+  }
+
+  //these next two methods are called ACCESSOR methods, as you're ACCESSING a field and returning it outside a class.
+  public int getNumPages(){
+    return numPages;
+  }
+  public int getCurrentPages(){
+    return currentPages;
+  }
+
+
+  public void nextPage(){
+    if(currentPages < numPages){
+      currentPages+=1;
+    }
+  }
+}
+            </pre>
+            <h3>Instance Data</h3>
+              <p>Where a variable is <em>declared</em> determines its <b>scope</b>-- where it can be used. Here, take a look.</p>
+              <pre class = "prettyprint">
+public class scopeEx{
+  //these fields have a scope that spans the ENTIRE CLASS, because they're declared outside all methods.
+  //that's the nifty thing about fields, actually because you can toss them around basicaly.
+  private int field1;
+  private String field2;
+  public void method1{
+    int variable1 = 4; //this variable has a scope of the entire method, and can be used by all program/control flows.
+    while(variable1 != 10){
+      variable1+=1;
+      int count = variable1; //this variable has a scope of only inside the while loop, and can't be used outside.
+    }
+    System.out.println(count); //this gives an error because count is in the scope of the while loop.
+  }
+}
+              </pre>
+              <p>Actually, <code>scopeEx</code> illustrates what <b>encapsulation</b> is pretty well. It hides its internal variables (the fields <code>field1</code> and <code>field2</code> from other classes), and does so using the <em>modifier</em> <code>private</code>. There's two other modifiers: <code>public</code> and <code>final</code> (variable value can't be changed any further).</p>
+              <table class = "table table-hover table-bordered">
+                <tr>
+                  <td></td>
+                  <th class = "success">public</th>
+                  <th class = "danger">private</th>
+                </tr>
+                <tr>
+                  <th>Variables</th>
+                  <td>Other classes can access it</td>
+                  <td class = "info">Other classes can't access it</td>
+                </tr>
+                <tr>
+                  <th>Methods</th>
+                  <td>Other clases can use these methods</td>
+                  <td class = "info">Other classes can't use these methods</td>
+                </tr>
+              </table>
+          <h2>Anatomy of a Method</h2>
+            <p>I'm gonna bring back that Book program from earlier to illustrate how <b>Method Declaration</b> and <b>Program Flow</b> work.</p>
+            <pre class = "prettyprint">
+public class BookTest{
+  //method syntax: [public/private/protected/none][void/primative type] methodName([primative type] parameter name)
+  public static void main(String[] args){ //this is the syntax for the MAIN method. (best memorize it)
+    Book book1 = new Book(3); //this creates new variable book1 of class Book, and references the Book constructor.
+    //object declaration syntax: [class] varname = new [class](parameters);
+
+    for(int i = 1; i<=3; i++){
+      book1.nextPage(); //this calls the nextPage() method, which is included with book1 since it's a class of Book.
+      System.out.println(book1.getCurrentPages()); //this calls the getCurrentPages() method, also included with book1
+    }
+  }
+}
+
+class Book{ //this is a second class in the program.
+
+  //these are FIELDS, or INSTANCE VARIABLES (vocab is the same)
+  //note how these are PRIVATE because you're ENCAPSULATING these inside the class.
+  private int numPages;
+  private int currentPages;
+
+  public Book(int n){//this is called a CONSTRUCTOR, because this sets up the object. more often than not it defines fields.
+    //these lines are giving values to the fields, for other classes to use.
+    numPages = n;
+    currentPages = 1;
+  }
+
+  //these next two methods are called ACCESSOR methods, as you're ACCESSING a field and returning it outside a class.
+  public int getNumPages(){
+    return numPages;
+  }
+  public int getCurrentPages(){
+    return currentPages;
+  }
+
+
+  public void nextPage(){
+    if(currentPages < numPages){
+      currentPages+=1;
+    }
+  }
+}
+            </pre>
+            <p>Also important is <code>return</code>- it serves two roles in Java. If a method's return type is set to a partiular type (see <code>int</code> in <code>getCurrentPages()</code>), <code>return</code> allows you to return a variable/value <em>of that type</em>. (If you tried returning a string you're getting an error) But if the return type is set to <code>void</code> (see <code>nextPage()</code>), then <code>return</code> <em>exits the program flow out of the method into the next higher-up method.</em>(<code>return</code> has no val/variable next to it cause it's <code>void</code>, otherwise an error gets triggered)</p>
+            <p>For example, if <code>nextPage()</code> had a <code>return</code> keyword, it would send the control flow up towards the <code>main(String[] args)</code> method since it <em>called</em> <code>nextPage()</code>.</p>
+            <h3>Parameters</h3>
+              <pre class = "prettyprint">
+public class parameterTest{
+  public static void main(String[] args){
+    System.out.println(method1(3.14,4)); //the two numbers represent ACUTAL PARAMETERS
+    //those numbers are the actual numbers that go into the method.
+    //types must match or you're getting an error.
+  }
+  public static int method1(double para1, int para2){ //this is called FORMAL PARAMETERS
+    //these represent the placeholders for the numbers.
+
+    int result = (int)para1 / para2;
+    return result;
+  }
+}
+              </pre>
+            <h3>Constructors, Accessors & Mutators</h3>
+              <pre class = "prettyprint">
+public class ConstructorDemo{
+  private int a;
+  private int b;
+  //constructors differ from methods in that they have the SAME NAME as class, and have no return data type.
+  //even void can't be put down here.
+  //constructors instantiate objects.
+  public ConstructorDemo(int para1, int para2){
+    para1 = a;
+    para2 = b;
+  }
+
+  //methods have return types and have their own names.
+  public static void method1(){
+    System.out.println(a);
+    System.out.println(b);
+    int abc = 1; //this is an example of local data (colloquail with local variable
+    //local data is limited to its method only and can't be used outside.)
+  }
+
+  //accessor methods
+  public int getpara1{ //provides field for an outside method.
+    return para1;
+  }
+
+  //mutator methods
+  public int setpara1(int enter){ //allows outside methods to modify fields
+    para1 = enter;
+    return para1;
+  }
+}
+              </pre>
+          <h2>Method Overloading</h2>
+            <p><b>Method Overloading</b>: multiple methods of thes same name. They're very useful for setting mutliple construtors for the same class.</p>
+            <pre class = "prettyprint">
+class Overload{
+  //the two method1 methods are differentiated via the different METHOD SIGNATURES
+  //easiest way to do this: change up the parameters.
+  static int method1(int metho1, int metho2){
+    System.out.println(metho1 + metho2);
+  }
+  static double method1(double method2, double method3){
+    //these two lines actually print out different println methods designed for different types of values.
+    System.out.println(method2 + method3);
+    System.out.println("Hello world");
+  }
+}
+            </pre>
+            <h3>Method Decomposition</h3>
+              <p>If a method becomes too complicated and windy, you can <em>break it up into smaller methods</em> to make the entire thing easier to operate.</p>
+          <h2>Obect Relationships</h2>
+            <p><b>Use Relationships</b>: classes 'aware' of each other and can use each other. This can apply to objects of different classes, or <em>the same class</em>.</p>
+            <pre class = "prettyprint">
+public class stringDemo2{
+  public static main(String[] args){
+    String hi = "hello world";
+    String bye = "goodbye, world";
+    String concat = hi.concat(bye); //use relationship between Strings hi and bye
+  }
+}
+            </pre>
+            <p><b>Aggregation</b> is often called a <em>has-a</em> relationship, and basically is an object with other objects as fields.</p>
+            <pre class = "prettyprint">
+public class userHandler{
+  Scanner kb; //this field composes of an object of class Scanner.
+  //A constructor using this field would create an object of class Scanner to sub it in.
+  private boolean reloop;
+  private double inputDouble;
+  private int inputInt;
+  public userHandler(){
+    kb = new Scanner(System.in); //see here
+    reloop = true;
+  }
+}
+            </pre>
+        </div>
+        <div class = "col-md-3">
+          <nav id="toc" data-spy = "affix" data-toggle="toc"></nav>
+        </div>
+      </div>
+    </div>
+    <div class = "jumbotron" style = "text-align: center; margin-bottom: 0;">
+      <h1>Thanks for Visiting!</h1>
+      <h3>Good Luck!</h3>
+    </div>
+  </body>
+</html>
