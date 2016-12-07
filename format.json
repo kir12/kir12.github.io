@@ -1,0 +1,5 @@
+{
+  "fitnessgram":1,
+  "pacer": false,
+  "test": [1,2,"hi",45,6,7E5,8,9,10]
+}
