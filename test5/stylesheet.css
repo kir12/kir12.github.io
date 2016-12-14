@@ -19,24 +19,41 @@ html,body{
 
 }
 
-#caption{
+.caption{
   color: white;
 }
 
-#caption > h1{
+.caption > h1{
   font-size: 5em;
   font-family: "sans-serif"
 }
 
-#caption > h2{
+.caption > h2{
   font-size: 4em;
 }
 
+#header{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/2darrays.gif');
+  background-color: rgba(0,0,0,.9);
+  height: 25vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#darray{
+
+}
+
 @media (max-width: 500px){
-  #caption > h1{
+  .caption > h1{
     font-size: 36px;
   }
-  #caption > h2{
+  .caption > h2{
     font-size: 30px;
   }
 }
