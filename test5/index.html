@@ -64,13 +64,18 @@ int[][] 2darray = {
       <h2>Declaring 2D arrays is just as easy as 1D arrays</h2>
       <div class = "row" style = "text-align: center;">
         <div class = "col-md-6">
-          <h3><mark style = "background-color: white; color: green;"> int[ ][ ]</mark> arr = <mark style = "background-color: white; color: red;">new</mark><mark style = "background-color: white; color: purple">int[2][3]</mark>;</h3>
+          <h3><mark style = "background-color: white; color: green;" data-toggle="tooltip" data-placement="top" title="specifies type of array"> int[ ][ ]</mark> arr = <mark style = "background-color: white; color: red;" data-toggle="tooltip" data-placement="top" title="new operator">new</mark><mark style = "background-color: white; color: purple" data-toggle="tooltip" data-placement="top" title="specifies specifications of array">int[2][3]</mark>;</h3>
         </div>
         <div class = "col-md-6">
-          <h3>the array on the top</h3>
-          <p>yeah</p>
+          <h3 data-toggle="tooltip" data-placement="top" title="the array on the top">the array on the top</h3>
+          <p data-toggle="tooltip" data-placement="top" title="yeah">yeah</p>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 </html>
