@@ -36,8 +36,20 @@ h1,h2,h3,p,h4{
   font-family: "Lato";
 }
 
-#header{
+
+#header1{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/2darrays.gif');
+}
+#darray{
+  background-color: transparent;
+}
+
+#header2{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/2darrays.gif');
+}
+
+.header{
+  /*fix prblm here*/
   background-color: rgba(0,0,0,.9);
   height: 25vh;
   background-attachment: fixed;
@@ -49,13 +61,10 @@ h1,h2,h3,p,h4{
   align-items: center;
   justify-content: center;
 }
-#darray{
-
-}
-
 mark{
   background-color: white;
 }
+
 @media (max-width: 500px){
   .caption > h1{
     font-size: 36px;
