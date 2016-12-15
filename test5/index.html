@@ -32,19 +32,25 @@
     <!-- add after bootstrap.min.js -->
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
     <link rel = "stylesheet" href = "stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
     <div class = "jumbotron" id = "top">
       <div class = "caption">
-        <h1><b>AP Computer Science 2016 - 2017</b></h1>
+        <h1>AP Computer Science 2016 - 2017</h1>
         <h2>Test 5: 2D Arrays</h2>
+
         <h3>Brian Lee, Pd 1</h3>
 
       </div>
     </div>
     <div class = "container">
-      <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> This study guide should be for last-minute crammers only! Study everything else first!</div>
-      <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i> Pardon our appearance as stuff gets added onto the site! You may refresh to check for new content.</div>
+      <div style = "text-align: center;">
+        <p><img src = "img/college.png" class = "img-responsive"></p>
+        <h1>Now with AP-Style Questions!</h1>
+      </div>
+      <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><p style = "display: inline;"> This study guide should be for last-minute crammers only! Study everything else first!</p></div>
+      <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i><p style = "display: inline;"> Pardon our appearance as stuff gets added onto the site! You may refresh to check for new content.</p></div>
     </div>
     <div class = "jumbotron" id = "header">
       <div class = "caption" id = "darray">
@@ -64,14 +70,47 @@ int[][] 2darray = {
       <h2>Declaring 2D arrays is just as easy as 1D arrays</h2>
       <div class = "row" style = "text-align: center;">
         <div class = "col-md-6">
-          <h3><mark style = "background-color: white; color: green;" data-toggle="tooltip" data-placement="top" title="specifies type of array"> int[ ][ ]</mark> arr = <mark style = "background-color: white; color: red;" data-toggle="tooltip" data-placement="top" title="new operator">new</mark><mark style = "background-color: white; color: purple" data-toggle="tooltip" data-placement="top" title="specifies specifications of array">int[2][3]</mark>;</h3>
+          <h3 style = "font-family: monospace;"><mark style = "color: green;" data-toggle="tooltip" data-placement="top" title="specifies type of array"> int </mark> <mark style = "color: orange;" data-toggle="tooltip" data-placement="top" title="specifies row (starting from 0)">[ ]</mark><mark style = "color: blue;" data-toggle="tooltip" data-placement="top" title="specifies column (starting from 0)">[ ]</mark> arr = <mark style = "color: red;" data-toggle="tooltip" data-placement="top" title="new operator">new</mark><mark style = "color: purple;" data-toggle="tooltip" data-placement="top" title="specifies specifications of array">int[2][3]</mark>;</h3>
         </div>
         <div class = "col-md-6">
-          <h3 data-toggle="tooltip" data-placement="top" title="the array on the top">the array on the top</h3>
+          <h3 style = "font-family: monospace;" data-toggle="tooltip" data-placement="top" title="the array on the top">the array on the top</h3>
           <p data-toggle="tooltip" data-placement="top" title="yeah">yeah</p>
         </div>
       </div>
-      <!--<h2>Using them is even easier! (ish)</h2>-->
+      <h2>Using them is even easier! (ish)</h2>
+      <p>Uses <code>2darray</code>, by the way</p>
+        <div class = "row">
+          <div class = "col-md-6">
+            <pre class = "prettyprint">
+public class ArrayIeteration{
+  public static void main(String[] args){
+    //ieteration using a for-each loop
+    for(int a[] : 2darray){ //accesses each row of array
+      for(int b : a){//accesses individual vals
+        System.out.println(b);
+      }
+    }
+  }
+}
+            </pre>
+          </div>
+          <div class = "col-md-6">
+            <pre class = "prettyprint">
+public class ArrayIeteration{
+  public static void main(String[] args){
+    //ieteration using a regular loop
+    for(int i = 0; i < 2darray.length; i++){ //ieterates through col index
+      for(int a = 0; i < 2darray[0].length; i++) //ieterates through row index
+      //2darray[0] calls an array, by which .length gives you width
+      //doesn't need to be 0 all the time
+        System.out.println(b);
+      }
+    }
+  }
+}
+            </pre>
+          </div>
+        </div>
     </div>
   </body>
   <script>

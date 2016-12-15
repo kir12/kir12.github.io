@@ -4,6 +4,9 @@ html,body{
 
 }
 
+h1,h2,h3,p,h4{
+  font-family: "Lato";
+}
 #top{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover.gif");
   background-color: rgba(0,0,0,.9);
@@ -24,12 +27,13 @@ html,body{
 }
 
 .caption > h1{
-  font-size: 5em;
-  font-family: "sans-serif"
+  font-size: 7em;
+  font-family: "Lato";
 }
 
 .caption > h2{
   font-size: 4em;
+  font-family: "Lato";
 }
 
 #header{
@@ -49,6 +53,9 @@ html,body{
 
 }
 
+mark{
+  background-color: white;
+}
 @media (max-width: 500px){
   .caption > h1{
     font-size: 36px;
