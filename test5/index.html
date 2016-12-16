@@ -148,7 +148,7 @@ for (r = 0; r < 8; r++)
         </div>
         <div class = "alert alert-success" style = "float: right; width: 75%; text-align: center"id = "success">
           Yay! You were right!
-          <h1>Want to see the explanation?</h1>
+          <h1>Feel free to see an explanation</h1>
         </div>
         <div class = "alert alert-info" style = "float: right; width: 75%; text-align: center"id = "info">
           You didn't enter anything
@@ -172,13 +172,147 @@ for (r = 0; r < 8; r++)
           </div>
           <button type="submit" class="btn btn-default" onclick = "reset()">Submit</button>
         </div>
+        <div class="panel-group" id = "explanation1">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">Here is an explanation</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+
+                <h3>Essentially, this program <b>alternates between adding 1 and 2 to two numbers</b>, and <b>gets the remainder divided by 8</b></h3>
+                <p class = "lead"><code>int[][] table</code> serves as an array of ones</p>
+                <h3>To get through these problems, you have to simply <em>grind</em> through the ieterations. CAREFULLY, while you're at it</h3>
+                <p class = "lead">The best way is to <b>make a table</b></p>
+                <table class = "table" style = "text-align: center;">
+                  <thead>
+                    <th><code>r</code></th>
+                    <th><code>c</code></th>
+                    <th><code>d1</code></th>
+                    <th><code>d2</code></th>
+                  </thead>
+                  <tbody>
+                    <tr class = "info">
+                      <td>0</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>7</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>7</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>5</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>7</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>0</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>6</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr class = "info">
+                      <td>0</td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3>That second <code>0,0</code> pair indicates these numbers get re-defined over and over again</h3>
+                <p class = "lead">All you gotta do is count away!</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
         <script>
-        document.getElementById("failure").style.display = "none";
+          document.getElementById("failure").style.display = "none";
 
-        document.getElementById("success").style.display = "none";
+          document.getElementById("success").style.display = "none";
 
-        document.getElementById("info").style.display = "none";
-
+          document.getElementById("info").style.display = "none";
+          document.getElementById("explanation1").style.display = "none";
+          var count = 0;
           function reset(){
             console.log("we have a winner");
             var failure = document.getElementById("failure");
@@ -193,6 +327,7 @@ for (r = 0; r < 8; r++)
             var ques1C = document.getElementById("ques1C");
             var ques1D = document.getElementById("ques1D");
             var ques1E = document.getElementById("ques1E");
+            var explanation1 = document.getElementById("explanation1");
             var test = false;
             var none = false;
             if(ques1A.checked){
@@ -207,10 +342,19 @@ for (r = 0; r < 8; r++)
               info.style.display = "initial";
             }
             else{
-              if(test){success.style.display = "initial";}
-              if(!test){failure.style.display = "initial";}
+              if(test){
+                success.style.display = "initial";
+                explanation1.style.display = "initial";
+              }
+              if(!test){
+                failure.style.display = "initial";
+                count++;
+                if(count >= 3){
+                  explanation1.style.display = "initial";
+                }
+              }
             }
-            
+
           }
         </script>
       </div>
