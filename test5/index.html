@@ -32,6 +32,7 @@
     <!-- add after bootstrap.min.js -->
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel = "stylesheet" href = "stylesheet.css">
   </head>
   <body>
@@ -119,6 +120,99 @@ public class ArrayIeteration{
         <div class = "caption">
           <h1>AP Questions</h1>
         </div>
+      </div>
+    </div>
+    <div class = "container">
+      <h2>AP Question 1</h2>
+      <div class = "well">
+        <p style = "font-family">What is the value of <code>sum</code> after the following code is executed?</p>
+        <pre class = "prettyprint">
+int d1 = 1, d2 = 2;
+int[][] table = new int[8][8];
+int r = 0, c = 0;
+for (int k = 0; k < 64; k++)
+{
+  table[r][c] = 1;
+  r = (r + d1) % 8;
+  c = (c + d2) % 8;
+  int temp = d1; d1 = d2; d2 = temp;
+}
+int sum = 0;
+for (r = 0; r < 8; r++)
+  for (c = 0; c < 8; c++)
+    sum += table[r][c];
+        </pre>
+        <div class = "alert alert-danger" style = "float: right; width: 75%; text-align: center"id = "failure">
+          Sorry, that's incorrect.
+          <h1>Please try again</h1>
+        </div>
+        <div class = "alert alert-success" style = "float: right; width: 75%; text-align: center"id = "success">
+          Yay! You were right!
+          <h1>Want to see the explanation?</h1>
+        </div>
+        <div class = "alert alert-info" style = "float: right; width: 75%; text-align: center"id = "info">
+          You didn't enter anything
+          <h1>Enter something</h1>
+        </div>
+        <div class = "form-group" id = "ques1" onload = "reset()";>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1A">A) 8</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1B">B) 15</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1C">C) 16</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1D">D) 22</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1E">E) 64</label>
+          </div>
+          <button type="submit" class="btn btn-default" onclick = "reset()">Submit</button>
+        </div>
+        <script>
+        document.getElementById("failure").style.display = "none";
+
+        document.getElementById("success").style.display = "none";
+
+        document.getElementById("info").style.display = "none";
+
+          function reset(){
+            console.log("we have a winner");
+            var failure = document.getElementById("failure");
+            var success = document.getElementById("success");
+            var info = document.getElementById("info");
+            failure.style.display = "none";
+            success.style.display = "none";
+            info.style.display = "none";
+
+            var ques1A = document.getElementById("ques1A");
+            var ques1B = document.getElementById("ques1B");
+            var ques1C = document.getElementById("ques1C");
+            var ques1D = document.getElementById("ques1D");
+            var ques1E = document.getElementById("ques1E");
+            var test = false;
+            var none = false;
+            if(ques1A.checked){
+              test = true;
+              console.log("a clicked");
+            }
+            else if(!ques1B.checked && !ques1C.checked && !ques1D.checked && !ques1E.checked){
+              none = true;
+
+            }
+            if(none){
+              info.style.display = "initial";
+            }
+            else{
+              if(test){success.style.display = "initial";}
+              if(!test){failure.style.display = "initial";}
+            }
+            
+          }
+        </script>
       </div>
     </div>
   </body>
