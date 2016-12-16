@@ -155,13 +155,43 @@ public class ArrayIeteration{
       </table>
       <h1 style = "text-align: center">2 X <mark style = "color: green;">3</mark> ● <mark style = "color: green;">3</mark> X 2</h1>
       <p class = "lead">It is ABSOLUTELY important that the amount of columns for one matrix equals the amount of rows of the other. Or else you can't multiply.</p>
+      <h3>Here's my add and multiply programs for matrices if you'd like</h3>
+      <div class = "row">
+        <div class = "col-md-6">
+          <pre class = "prettyprint">
+public static int[][] add(int[][] matrix, int[][] matrix2){
+    int[][] matrix3 = new int[matrix.length][matrix[0].length];
+    for(int i = 0; i < matrix.length; i++){
+      for(int a = 0; a < matrix[i].length; a++){
+        matrix3[i][a] = matrix[i][a] + matrix2[i][a];
+      }
+    }
+    return matrix3;
+  }
+          </pre>
+        </div>
+        <div class = "col-md-6">
+          <pre class = "prettyprint">
+public static int[][] multiply(int[][] matrix, int[][] matrix2){
+    int m1ColLength = matrix[0].length; // m1 columns length
+    int m2RowLength = matrix2.length;    // m2 rows length
+    if(m1ColLength != m2RowLength) return null; // matrix multiplication is not possible
+    int mRRowLength = matrix.length;    // m result rows length
+    int mRColLength = matrix2[0].length; // m result columns length
+    int[][] mResult = new int[mRRowLength][mRColLength];
+    for(int i = 0; i < mRRowLength; i++) {         // rows from m1
+      for(int j = 0; j < mRColLength; j++) {     // columns from m2
+        for(int k = 0; k < m1ColLength; k++) { // columns from m1
+          mResult[i][j] += matrix[i][k] * matrix2[k][j];
+        }
+      }
+    }
+    return mResult;
+  }
+          </pre>
+        </div>
+      </div>
     </div>
-
-
-
-
-
-
     <div class = "header" id = "header2">
       <div class = "jumbotron" id = "apq">
         <div class = "caption">
