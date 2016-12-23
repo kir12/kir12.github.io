@@ -20,4 +20,25 @@
 #top > .jumbotron{
   color: white;
   background-color: transparent;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+#top > .jumbotron > h1{
+  font-family: "Raleway";
+}
+
+#top > .jumbotron > h2{
+  font-family: "Space Mono";
+}
+
+.container > h1{
+  font-family: "Lato";
+}
+
+.container > h2{
+  font-family: "Raleway";
+}
+
+.header > h1{
+  
 }
