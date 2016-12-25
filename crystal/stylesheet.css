@@ -5,11 +5,13 @@
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+  /*
   text-align: center !important;
   margin-top: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  */
 }
 
 #top{
@@ -17,28 +19,35 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/top.jpeg");
 }
 
+#headtext::before{
+  content: '';
+  transform: skewX(-30deg);
+  z-index: -1;
+  display: inline-block;
+
+}
+#headtext{
+  height: 100vh;
+  text-align: right;
+  display: block;
+  width: auto;
+  background-color: white;
+  padding-right: 1em;
+  font-family: 'Raleway';
+}
+/*
 #top > .jumbotron{
   color: white;
   background-color: transparent;
   padding-left: 1em;
   padding-right: 1em;
 }
-#top > .jumbotron > h1{
-  font-family: "Raleway";
-}
+*/
+#headtext > h1{
 
-#top > .jumbotron > h2{
-  font-family: "Space Mono";
+  font-size: 5em;
+  color: #0039A6;
 }
-
-.container > h1{
-  font-family: "Lato";
-}
-
-.container > h2{
-  font-family: "Raleway";
-}
-
-.header > h1{
+#head > h2{
   
 }

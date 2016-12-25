@@ -1,0 +1,13 @@
+.header{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
