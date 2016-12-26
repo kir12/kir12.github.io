@@ -89,6 +89,13 @@ body{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover1.jpg");
 }
 
+#head2{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover2.jpg");
+}
+
+#head3{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover3.jpg");
+}
 .times{
   font-family: "Times New Roman";
 }
