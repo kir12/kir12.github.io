@@ -37,6 +37,42 @@
 
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel = "stylsheet" href = "plugin/jquery.bsPhotoGallery.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+    <script src = "plugin/jquery.bsPhotoGallery.js"></script>
+    <style>
+
+      @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+      body {
+
+      }
+      .first{
+          padding:0 0 0 0;
+          margin:0 0 40px 0;
+      }
+      .first > li {
+          list-style:none;
+          margin-bottom:10px;
+      }
+
+      .text {
+        font-family: 'Bree Serif';
+        color:white;
+        font-size:11px;
+        margin-bottom:10px;
+        padding:12px;
+        background:#E0E0E0;
+      }
+
+
+
+
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -94,7 +130,47 @@
         <h2 class = "times">No Memes</h2>
         <p>yet</p>
       </div>
+      <ul class = "first">
+        <li><img src = "img/ddi/pic1.jpg"><div class = "text">hahahhaahaha</div></li>
+        <li><img src = "img/ddi/pic2.jpg"></li>
+        <li><img src = "img/ddi/pic3.jpg"></li>
+        <li><img src = "img/ddi/pic4.jpg"></li>
+        <li><img src = "img/ddi/pic5.jpg"></li>
+        <li><img src = "img/ddi/pic6.jpg"></li>
+        <li><img src = "img/ddi/pic7.jpg"></li>
+        <li><img src = "img/ddi/pic8.jpg"></li>
+        <li><img src = "img/ddi/pic9.jpg"></li>
+        <li><img src = "img/ddi/pic10.jpg"></li>
+        <li><img src = "img/ddi/pic11.jpg"></li>
+        <li><img src = "img/ddi/pic12.jpg"></li>
+        <li><img src = "img/ddi/pic13.jpg"></li>
+        <li><img src = "img/ddi/pic14.jpg"></li>
+        <li><img src = "img/ddi/pic15.jpg"></li>
+        <li><img src = "img/ddi/pic16.jpg"></li>
+        <li><img src = "img/ddi/pic17.jpg"></li>
+        <li><img src = "img/ddi/pic18.jpg"></li>
+        <li><img src = "img/ddi/pic19.jpg"></li>
+        <li><img src = "img/ddi/pic20.jpg"></li>
+        <li><img src = "img/ddi/pic21.jpeg"></li>
+        <li><img src = "img/ddi/pic22.jpg"></li>
+        <li><img src = "img/ddi/pic23.jpg"></li>
+        <li><img src = "img/ddi/pic24.jpg"></li>
+        <li><img src = "img/ddi/pic25.jpg"></li>
+        <li><img src = "img/ddi/pic26.jpg"></li>
+        <li><img src = "img/ddi/pic27.jpg"></li>
+        <li><img src = "img/ddi/pic28.jpg"></li>
+        <li><img src = "img/ddi/pic29.jpg"></li>
+        <li><img src = "img/ddi/pic30.jpg"></li>
+      </ul>
     </div>
+    <script>
+    $(document).ready(function(){
+      $('ul.first').bsPhotoGallery({
+        "classes" : "col-lg-2 col-md-4 col-sm-3 col-xs-4 col-xxs-12",
+        "hasModal" : true
+      });
+    });
+    </script>
     <div class = "subheader" id = "head2">
       <h1>M E M E S</h1>
     </div>
