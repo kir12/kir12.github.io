@@ -42,8 +42,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    
+
     <script src = "plugin/jquery.bsPhotoGallery.js"></script>
+    <script src = "audio.js"></script>
     <style>
 
       @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
@@ -74,7 +75,7 @@
 
     </style>
   </head>
-  <body>
+  <body onload = "audioLoad()">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -84,6 +85,15 @@
           <li><a href="#head1">DDI/BAM Pics & Exposes</a></li>
           <li><a href="#head2">M E M E S</a></li>
           <li><a href="#head3">A Letter</a></li>
+        </ul>
+        <ul class = "nav navbar-nav navbar-right">
+          <li style = "padding-top: .5em;">
+            <audio controls = "controls" id = "audio">
+              <!--<source src="horse.ogg" type="audio/ogg">-->
+              <source src="snowdin.mp3" type="audio/mpeg" id = "src">
+            Your browser does not support the audio element.
+            </audio>
+          </li>
         </ul>
       </div>
     </nav>
@@ -131,7 +141,7 @@
         <p>yet</p>
       </div>
       <ul class = "first">
-        <li><img src = "img/ddi/pic1.jpg"><div class = "text">hahahhaahaha</div></li>
+        <li><img src = "img/ddi/pic1.jpg"></li>
         <li><img src = "img/ddi/pic2.jpg"></li>
         <li><img src = "img/ddi/pic3.jpg"></li>
         <li><img src = "img/ddi/pic4.jpg"></li>
@@ -175,14 +185,41 @@
       <h1>M E M E S</h1>
     </div>
     <div class = "container">
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
-      <p>aaaa</p>
+      <div style = "text-align: center">
+        <h1 class = "times">A E S E T H E T I C</h1>
+      </div>
+      <ul class = "first">
+        <li><img src = "img/memes/pic1.jpg"></li>
+        <li><img src = "img/memes/pic2.jpg"></li>
+        <li><img src = "img/memes/pic3.jpg"></li>
+        <li><img src = "img/memes/pic4.jpg"></li>
+        <li><img src = "img/memes/pic5.jpg"></li>
+        <li><img src = "img/memes/pic6.jpg"></li>
+        <li><img src = "img/memes/pic7.jpg"></li>
+        <li><img src = "img/memes/pic8.jpg"></li>
+        <li><img src = "img/memes/pic9.jpg"></li>
+        <li><img src = "img/memes/pic10.jpg"></li>
+        <li><img src = "img/memes/pic11.jpeg"></li>
+        <li><img src = "img/memes/pic12.jpg"></li>
+        <li><img src = "img/memes/pic13.jpeg"></li>
+        <li><img src = "img/memes/pic14.jpg"></li>
+        <li><img src = "img/memes/pic15.jpg"></li>
+        <li><img src = "img/memes/pic16.jpg"></li>
+        <li><img src = "img/memes/pic17.jpg"></li>
+        <li><img src = "img/memes/pic18.jpg"></li>
+        <li><img src = "img/memes/pic19.jpg"></li>
+        <li><img src = "img/memes/pic20.jpg"></li>
+        <li><img src = "img/memes/pic21.jpg"></li>
+        <li><img src = "img/memes/pic22.jpg"></li>
+        <li><img src = "img/memes/pic23.jpg"></li>
+        <li><img src = "img/memes/pic24.jpg"></li>
+        <li><img src = "img/memes/pic25.jpg"></li>
+        <li><img src = "img/memes/pic26.jpg"></li>
+        <li><img src = "img/memes/pic27.jpg"></li>
+        <li><img src = "img/memes/pic28.jpg"></li>
+        <li><img src = "img/memes/pic29.jpg"></li>
+        <li><img src = "img/memes/pic30.jpg"></li>
+      </ul>
     </div>
     <div class = "subheader" id = "head3">
       <h1>A Letter</h1>
@@ -196,6 +233,9 @@
       <p>aaaa</p>
       <p>aaaa</p>
       <p>aaaa</p>
+    </div>
+    <div class = "container-fluid" style = "background-color: green; padding-left: 20%;">
+      <p>footer test</p>
     </div>
   </body>
 </html>
