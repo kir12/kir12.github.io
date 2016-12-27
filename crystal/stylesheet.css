@@ -99,3 +99,19 @@ body{
 .times{
   font-family: "Times New Roman";
 }
+
+.indieFlower{
+  font-family: "Indie Flower";
+}
+.spaceMono{
+  font-family: "Space Mono";
+}
+
+.inner{
+  width: 40%;
+  text-align: right;
+  padding: 1em;
+  margin-top: 1em;
+  color: white;
+  font-family: "Raleway";
+}
