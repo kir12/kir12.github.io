@@ -5,9 +5,35 @@
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  text-align: center !important;
-  margin-top: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+}
+
+#top{
+  height: 100vh !important;
+  background: linear-gradient(to bottom right, red, green);
+
+
+}
+
+#top h1{
+  font-size: 8em;
+}
+#top h2{
+  font-size: 3em;
+}
+@keyframes slideIn{
+  from{margin-left: 200em;}
+  to{margin-left: 0em;}
+}
+#caption{
+  color: white;
+  padding-left: 3em;
+  background: rgba(0,0,0,0);
+  font-family: "Raleway";
+  white-space: no-wrap;
+}
+
+#text{
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
