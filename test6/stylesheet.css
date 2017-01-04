@@ -71,3 +71,23 @@
 #header2{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover2.jpg");
 }
+
+.inner{
+  width: 40%;
+  text-align: right;
+  padding: 1em;
+  margin-top: 1em;
+  color: white;
+  font-family: "Lato";
+  /*
+  animation-name: headerIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  */
+}
+/*
+@keyframes headerIn{
+  from{margin-right: 100em;}
+  to{margin-right: 0em;}
+}
+*/
