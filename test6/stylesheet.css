@@ -37,3 +37,30 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
+
+.subheader{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+
+  text-align: center !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white;
+  font-family: 'Raleway' !important;
+
+}
+
+.subheader h1{
+  font-size: 3em;
+}
+#header1{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover1.png");
+
+}
