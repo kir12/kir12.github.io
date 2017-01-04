@@ -14,6 +14,9 @@
 
 }
 
+.container{
+  font-family: "Lato";
+}
 #top h1{
   font-size: 8em;
 }
@@ -63,4 +66,8 @@
 #header1{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover1.png");
 
+}
+
+#header2{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover2.jpg");
 }

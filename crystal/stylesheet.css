@@ -3,6 +3,9 @@ body{
   height: 100%;
 }
 
+.container{
+  font-family: "Lato";
+}
 
 .header{
   /*fix prblm here*/

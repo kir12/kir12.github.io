@@ -56,14 +56,68 @@
       <h1>Enhanced Classes</h1>
     </div>
     <div class = "container">
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
+      <h1><code>static</code> modifiers assosiate with <code>classes</code>, not objects</h1>
+      <pre class = "prettyprint">
+public class StaticDemo{
+
+  //this is an example of a STATIC method: you don't need an object for the method
+  //it's important for the main method since there is no starting object
+  public static void main(String[] args){
+    Calc calculator = new Calc(3,2);
+    System.out.println(calculaor.add());
+    System.out.println(Calc.subtract()); //this is an example of calling an abstract method
+    //you saw this with Math.sqrt();
+  }
+}
+
+class Calc{
+  //you know these as INSTANCE variables
+  //they're instances of each object, just as each object is an instance of a class
+  private int alpha;
+  private int beta;
+
+  //this is  STATIC variable: all objects share this same data
+  //means if you change static variables for one object, it changes for all else
+  private static int count;
+
+  //here's a common usage of static variables: signifying "full" constants
+  private static final int TYPE = 0;
+
+  //constructors are always not static, cause they instantiate objects
+  public Calc(int a, int b){
+    alpha = a;
+    beta = b;
+  }
+  public int add(){
+    int sum = 0; //this is a LOCAL variable because it's called within a method
+                 //this variable will die when the method ends
+    count = 5;
+    sum = a + b;
+    return sum;
+  }
+
+  //this is a static method in implementation
+  //it's called via the CLASS, so no objects!
+  public static int subtract(){
+    return alpha - beta; //this causes an error
+    //static methods can't call instance variables
+    //same goees vice versa
+  }
+}
+      </pre>
+    </div>
+    <div class = "subheader" id = "header2">
+      <h1>Inheritance</h1>
+    </div>
+    <div class = "container">
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
+      <p>aaaa</p>
     </div>
   </body>
 </html>
