@@ -160,8 +160,8 @@ public class ClientClass{
 }
 
 class ParentClass{
-  private int field1;
-  prrivate String field2;
+  protected int field1;
+  protected String field2;
   public ParentClass(int a, String b){
     field1 = a;
     field2 = b;
@@ -188,7 +188,7 @@ class ChildClass extends ParentClass{
             <p class = "lead">By defeault all child classes make a <code>super()</code> (no paremeters) call. If you're extending you'll need to add a constructor in the parent class or you'll get an error.</p>
             <h2><code>super.method()</code> is a reference to a parent class method</h2>
             <p class = "lead">This can be used to access private parent variables made earlier with <code>super</code> (see the example).</p>
-            <p>Careful! To do this you'll need to make said parent variables <code>public</code> or <code>protected<code>.</p>
+            <p>Careful! To do this you'll need to make said parent variables <code>public</code> or <code>protected</code>.</p>
           </div>
         </div>
 
@@ -199,7 +199,44 @@ class ChildClass extends ParentClass{
       </div>
     </div>
     <div class = "container">
-      <p>The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly but gets faster each minute after you hear this signal bodeboop. A sing lap should be completed every time you hear this sound. ding Remember to run in a straight line and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark. Get ready!… Start. ding﻿</p>
+      <h1>The keyword <code>abstract</code> indicates a class contains abstract methods.</h1>
+      <p class = "lead">It means it has abstract <b>method headers</b> to be later implemented in child classes.</p>
+      <div class = "row">
+        <div class = "col-md-6">
+          <h2>Abstract methods have the <code>abstract</code> keyword in the method header and <span>no method body</span>.</h2>
+          <p class = "lead">These methods are later implemented in child classes.</p>
+          <p class = "lead"><span style = "color: red;">Warning: </span>you can't instantiate <code>abstract</code> classes</p>
+          <h2>NOTE: <code>abstract</code> is different from <code>interface</code> in that the latter is <em>entirely</em> headers</h2>
+          <p class = "lead">You can still have regualar methods in <code>abstract</code></p>
+        </div>
+        <div class = "col-md-6">
+          <pre class = "prettyprint">
+public abstract class AbstractClass{
+  protected int a;
+  public abstract int getSum(); //this must be implemented or it'll yield an error
+  public void print(){
+    System.out.println("I am a totmato");
+  }
+}
+public class ChildClass extends AbstractClass{
+  public int getSum(){
+    return a++;
+  }
+  public void print(){
+    super.print();
+    System.out.println("I am a potato");
+  }
+}
+
+public class ClientClass{
+  public static void main(String[] args){
+    ChildClass abba = new ChildClass();
+    System.out.println(getSum() + print()); //what happens when print() is called?
+  }
+}
+          </pre>
+        </div>
+      </div>
     </div>
     <div class = "container-fluid" style = "padding-left: 0;">
       <div style = "background-color: brown;" class = "inner">
