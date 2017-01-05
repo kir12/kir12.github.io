@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.css">
     <!-- add after bootstrap.min.js -->
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v0.4.1/dist/bootstrap-toc.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -115,14 +115,40 @@ class Calc{
       </div>
     </div>
     <div class = "container" style = "padding-top: 1em;">
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
-      <p>aa</p>
+      <h1>Child classes <code>extends</code> from Parent classes</h1>
+        <p class = "lead">Essentially, a child classe inherits all of its parent class's <code>protected</code> and <code>public</code> instance variables or methods. (<code>private</code> stuff isn't inherited... I wonder why)</p>
+        <div class = "row">
+          <div class = "col-md-6" style = "text-align: right;">
+            <h2>Java uses <code>extends</code> to indicate inheritance. B <code>extends</code> A means A is B's parent class (and vice versa)</h2>
+            <p class = "lead">You can only do this ONCE by the way, meaning Java's <span style = "color: red;"> single-inheritance</span> and has <b>is-a</b> relationships.</p>
+            <h2>Programmers cite <span style = "color: green;">reusability</span> as inheritance's good points.</h2>
+          </div>
+          <div class = "col-md-6">
+            <pre class = "prettyprint">
+public class ClientClass{
+  public static void main(String[] args){
+    B obj = new B();
+    B.printAnotherThing();
+  }
+}
+class A{
+  public void printSomething(){
+    System.out.println("This is an A");
+  }
+}
+
+class B extends A{
+  public void printAnotherThing(){
+    printSomething();
+    System.out.println("But this is a B too!");
+  }
+}
+            </pre>
+          </div>
+        </div>
+        <p>Stack <code>extends</code> long enough and you'll get something called <b>class heiarchies</b> (<a href = "http://www.java-forums.org/attachments/ocaj/3835d1336933994t-tutorial-depth-view-java-classes-java-certification-exam-iv-d9-classhierarchy.jpg">this</a> is what I mean)</p>
+      <h1><code>super</code> accesses a parent class's stuff</h1>
+
     </div>
   </body>
 </html>
