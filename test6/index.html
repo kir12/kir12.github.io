@@ -148,7 +148,50 @@ class B extends A{
         </div>
         <p>Stack <code>extends</code> long enough and you'll get something called <b>class heiarchies</b> (<a href = "http://www.java-forums.org/attachments/ocaj/3835d1336933994t-tutorial-depth-view-java-classes-java-certification-exam-iv-d9-classhierarchy.jpg">this</a> is what I mean)</p>
       <h1><code>super</code> accesses a parent class's stuff</h1>
-        <p class = "lead">One big example is invoking a parent's constructor</p>
+        <p class = "lead">Two big usages of <code>super</code> is for calling parent <b>constructors</b> and <b>methods</b>.</p>
+        <div class = "row">
+          <div class = "col-md-6">
+            <pre class = "prettyprint">
+public class ClientClass{
+  public static void main(String[] args){
+    ChildClass a = new ChildClass(3, "hello", 'p');
+    a.thing();
+  }
+}
+
+class ParentClass{
+  private int field1;
+  prrivate String field2;
+  public ParentClass(int a, String b){
+    field1 = a;
+    field2 = b;
+  }
+  public int increment(){
+    return field1++;
+  }
+}
+
+class ChildClass extends ParentClass{
+  private char field3;
+  public ChildClass(int a, String b, char c){
+    super(a, b);
+    field3 = c;
+  }
+  public void thing(){
+    System.out.println(super.increment() + field3);
+  }
+}
+            </pre>
+          </div>
+          <div class = "col-md-6">
+            <h2>Calling <code>super()</code> is a reference to your parent class's constructor.</h2>
+            <p class = "lead">By defeault all child classes make a <code>super()</code> (no paremeters) call. If you're extending you'll need to add a constructor in the parent class or you'll get an error.</p>
+            <h2><code>super.method()</code> is a reference to a parent class method</h2>
+            <p class = "lead">This can be used to access private parent variables made earlier with <code>super</code> (see the example).</p>
+            <p>Careful! To do this you'll need to make said parent variables <code>public</code> or <code>protected<code>.</p>
+          </div>
+        </div>
+
     </div>
     <div class = "container-fluid" style = "padding-left: 0;">
       <div style = "background-color: magenta;" class = "inner">
