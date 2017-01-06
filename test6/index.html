@@ -299,14 +299,153 @@ class ChildClass2 extends ParentClass{
       <h1>AP Questions</h1>
     </div>
     <div class = "container" style = "padding-top: 1em;">
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p>
-      <p>aaaaa</p><p>aaaaa</p>
+      <h1>Question 1: <code>super</code></h1>
+      <p class = "lead">Question 8 from the 2006 AP Exam</p>
+      <div class = "well">
+        <p>Consider the following classes: </p>
+        <pre class = "prettyprint">
+public class Greeting
+{
+  public String getMessage() { return "How do you do, Mr. "; }
+  private String getName() { return "Smith"; }
+  public String toString() { return getMessage() + getName(); }
+}
+public class InformalGreeting extends Greeting
+{
+  public String getMessage() { return "Hi, "; }
+  private String getName() { return "Bob"; }
+  public String toString() { return super.toString(); }
+}
+public class VeryInformalGreeting extends InformalGreeting
+{
+  public String getMessage() { return "'sup, "; }
+  private String getName() { return "dude"; }
+}
+        </pre>
+        <p>What does this display?</p>
+        <pre class = "prettyprint">
+System.out.println(new VeryInformalGreeting());
+        </pre>
+        <div class = "alert alert-danger" style = "float: right; width: 75%; text-align: center"id = "failure">
+          Sorry, that's incorrect.
+          <h1>Please try again</h1>
+        </div>
+        <div class = "alert alert-success" style = "float: right; width: 75%; text-align: center"id = "success">
+          Yay! You were right!
+          <h1>Feel free to see an explanation</h1>
+        </div>
+        <div class = "alert alert-info" style = "float: right; width: 75%; text-align: center"id = "info">
+          You didn't enter anything
+          <h1>Enter something</h1>
+        </div>
+        <div class = "form-group" id = "ques1" onload = "reset()";>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1A">A) <span style = "font-family: Courier;">How do you do, Mr. Smith?</span></label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1B">B) <span style = "font-family: Courier;">Hi, Bob</span></label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1C">C) <span style = "font-family: Courier;">'sup, Bob</span></label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1D">D) <span style = "font-family: Courier;">'sup, dude</span></label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" id = "ques1E">E) <span style = "font-family: Courier;">'sup, Smith</span></label>
+          </div>
+          <button type="submit" class="btn btn-default" onclick = "reset()">Submit</button>
+        </div>
+        <div class="panel-group" id = "explanation1">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">Here is an explanation</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <h2>The client code is essentially <code>print</code>ing an instance of <code>VeryInformalGreeting</code>, meaning it looks for <code>toString()</code></h2>
+                  <p class = "lead">Luckily because veryInformalGreeting <code>extends</code> InformalGreeting, we have a <code>toString()</code>.</p>
+                  <div class = "row">
+                    <div class = "col-md-6">
+                      <pre class = "prettyprint">
+public String toString() { //InformalGreeting
+  return super.toString();
+}
+                      </pre>
+                    </div>
+                    <div class = "col-md-6">
+                      <h3>Actually, <code>toString()</code> actually calls Greeting's parent class (<code>extends</code>), so we have to jump there instead</h3>
+                    </div>
+                  </div>
+                  <pre class = "prettyprint">
+public String toString() { //Greeting
+  return getMessage() + getName();
+}
+                  </pre>
+                  <p>I'm getting sick of doing <code> div class = "row"</code> lol</p>
+                  <h2><code>getMessage()</code> and <code>getName()</code> are both calls to VeryInformalGreeting's methods, but that's not all.</h2>
+                  <p class = "lead">VeryInformalGreeting's <code>getName()</code> is <code>private</code>, so we can't use it. We'll default to Greeting's <code>getName()</code>.</p>
+                  <h1>This leaves us with an output of <code>'sup, Smith</code>, or <b>E</b>.</h1>
+              </div>
 
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById("failure").style.display = "none";
+
+        document.getElementById("success").style.display = "none";
+
+        document.getElementById("info").style.display = "none";
+        document.getElementById("explanation1").style.display = "none";
+        var count = 0;
+        function reset(){
+          console.log("we have a winner");
+          var failure = document.getElementById("failure");
+          var success = document.getElementById("success");
+          var info = document.getElementById("info");
+          failure.style.display = "none";
+          success.style.display = "none";
+          info.style.display = "none";
+
+          var ques1A = document.getElementById("ques1A");
+          var ques1B = document.getElementById("ques1B");
+          var ques1C = document.getElementById("ques1C");
+          var ques1D = document.getElementById("ques1D");
+          var ques1E = document.getElementById("ques1E");
+          var explanation1 = document.getElementById("explanation1");
+          var test = false;
+          var none = false;
+          if(ques1E.checked){
+            test = true;
+            console.log("a clicked");
+          }
+          else if(!ques1A.checked && !ques1B.checked && !ques1C.checked && !ques1D.checked){
+            none = true;
+
+          }
+          if(none){
+            info.style.display = "initial";
+          }
+          else{
+            if(test){
+              success.style.display = "initial";
+              explanation1.style.display = "initial";
+            }
+            if(!test){
+              failure.style.display = "initial";
+              count++;
+              if(count >= 3){
+                explanation1.style.display = "initial";
+              }
+            }
+          }
+
+        }
+      </script>
     </div>
   </body>
 </html>
