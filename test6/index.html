@@ -202,11 +202,10 @@ class ChildClass extends ParentClass{
       <h1>The keyword <code>abstract</code> indicates a class contains abstract methods.</h1>
       <p class = "lead">It means it has abstract <b>method headers</b> to be later implemented in child classes.</p>
       <div class = "row">
-        <div class = "col-md-6">
+        <div class = "col-md-6" style = "text-align: right;">
           <h2>Abstract methods have the <code>abstract</code> keyword in the method header and <span>no method body</span>.</h2>
-          <p class = "lead">These methods are later implemented in child classes.</p>
-          <p class = "lead"><span style = "color: red;">Warning: </span>you can't instantiate <code>abstract</code> classes</p>
-          <h2>NOTE: <code>abstract</code> is different from <code>interface</code> in that the latter is <em>entirely</em> headers</h2>
+          <p class = "lead"><span style = "color: red;">Warning: </span>you can't instantiate <code>abstract</code> classes. Methods are later implemented in child classes.</p>
+          <h2>NOTE: <code>abstract</code> is different from <code>interface</code> in that the latter is <em>entirely</em> headers- no full methods!</h2>
           <p class = "lead">You can still have regualar methods in <code>abstract</code></p>
         </div>
         <div class = "col-md-6">
@@ -244,7 +243,57 @@ public class ClientClass{
       </div>
     </div>
     <div class = "container">
-      <p>The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly but gets faster each minute after you hear this signal bodeboop. A sing lap should be completed every time you hear this sound. ding Remember to run in a straight line and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark. Get ready!… Start. ding﻿</p>
+      <h1>Polymorphism isn't a thing you can <code>type</code></h1>
+        <p class = "lead">It's an automated feature of Java where variables refer to <span style = "color: blue;">multiple</span> objects. It's also not <b>that</b> hard.</p>
+        <p>Trust me.</p>
+
+        <pre class = "prettyprint">
+public class PolyDemo{
+  public static void main(String[] args){
+      ParentClass ab = new ParentClass();
+      ab.doStuff();
+  }
+}
+
+class ParentClass{
+  GenericClass stuff[];
+  public void ParentClass(){
+    stuff = new GenericClass[2];
+  }
+  public void doStuff(){
+    //this illustrates polymorphism: variables of class GenericClass are assigned to other type classes
+    //in essence, GenericClass variables can actually take the form of other variables.
+    //this is possible because the other 2 classes are extending GenericClass.
+    stuff[0] = new ChildClass(1,2);
+
+
+    stuff[1] = new ChildClass2("hello", "world");
+  }
+
+}
+
+public class GenericClass{
+  public GenericClass(){
+    System.out.println("hi");
+  }
+}
+class ChildClass extends GenericClass{
+  private int num1, num2;
+  public ChildClass(int a, int b){
+    num1 = a;
+    num2 = b;
+  }
+}
+
+class ChildClass2 extends ParentClass{
+  private String str1, str2;
+  public ChildClass2(String a, String b){
+    str1 = a;
+    str2 = b;
+  }
+}
+        </pre>
+
     </div>
   </body>
 </html>
