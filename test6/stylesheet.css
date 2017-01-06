@@ -71,7 +71,9 @@
 #header2{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover2.jpg");
 }
-
+#header3{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover3.png");
+}
 .inner{
   width: 40%;
   text-align: right;
