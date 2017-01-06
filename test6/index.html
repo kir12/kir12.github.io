@@ -50,7 +50,7 @@
     </div>
     <div class = "container" style = "padding-top: 1em;">
       <div class = "alert alert-warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><p style = "display: inline;"> This study guide should be for last-minute crammers only! Study everything else first!</p></div>
-      <div class = "alert alert-danger"><i class="fa fa-times-circle" aria-hidden="true"></i><p style = "display: inline;"> Pardon our appearance as stuff gets added onto the site! You may refresh to check for new content.</p></div>
+      <div class = "alert alert-success"><i class="fa fa-check" aria-hidden="true"></i><p style = "display: inline;"> Most of the stuff is now up! Any questions please message me. Good Luck!</p></div>
     </div>
     <div class = "subheader" id = "header1">
       <h1>Enhanced Classes</h1>
@@ -393,59 +393,65 @@ public String toString() { //Greeting
             </div>
           </div>
         </div>
-      </div>
-      <script>
-        document.getElementById("failure").style.display = "none";
+        <script>
+          document.getElementById("failure").style.display = "none";
 
-        document.getElementById("success").style.display = "none";
+          document.getElementById("success").style.display = "none";
 
-        document.getElementById("info").style.display = "none";
-        document.getElementById("explanation1").style.display = "none";
-        var count = 0;
-        function reset(){
-          console.log("we have a winner");
-          var failure = document.getElementById("failure");
-          var success = document.getElementById("success");
-          var info = document.getElementById("info");
-          failure.style.display = "none";
-          success.style.display = "none";
-          info.style.display = "none";
+          document.getElementById("info").style.display = "none";
+          document.getElementById("explanation1").style.display = "none";
+          var count = 0;
+          function reset(){
+            console.log("we have a winner");
+            var failure = document.getElementById("failure");
+            var success = document.getElementById("success");
+            var info = document.getElementById("info");
+            failure.style.display = "none";
+            success.style.display = "none";
+            info.style.display = "none";
 
-          var ques1A = document.getElementById("ques1A");
-          var ques1B = document.getElementById("ques1B");
-          var ques1C = document.getElementById("ques1C");
-          var ques1D = document.getElementById("ques1D");
-          var ques1E = document.getElementById("ques1E");
-          var explanation1 = document.getElementById("explanation1");
-          var test = false;
-          var none = false;
-          if(ques1E.checked){
-            test = true;
-            console.log("a clicked");
-          }
-          else if(!ques1A.checked && !ques1B.checked && !ques1C.checked && !ques1D.checked){
-            none = true;
-
-          }
-          if(none){
-            info.style.display = "initial";
-          }
-          else{
-            if(test){
-              success.style.display = "initial";
-              explanation1.style.display = "initial";
+            var ques1A = document.getElementById("ques1A");
+            var ques1B = document.getElementById("ques1B");
+            var ques1C = document.getElementById("ques1C");
+            var ques1D = document.getElementById("ques1D");
+            var ques1E = document.getElementById("ques1E");
+            var explanation1 = document.getElementById("explanation1");
+            var test = false;
+            var none = false;
+            if(ques1E.checked){
+              test = true;
+              console.log("a clicked");
             }
-            if(!test){
-              failure.style.display = "initial";
-              count++;
-              if(count >= 3){
+            else if(!ques1A.checked && !ques1B.checked && !ques1C.checked && !ques1D.checked){
+              none = true;
+
+            }
+            if(none){
+              info.style.display = "initial";
+            }
+            else{
+              if(test){
+                success.style.display = "initial";
                 explanation1.style.display = "initial";
               }
+              if(!test){
+                failure.style.display = "initial";
+                count++;
+                if(count >= 3){
+                  explanation1.style.display = "initial";
+                }
+              }
             }
-          }
 
-        }
-      </script>
+          }
+        </script>
+      </div>
     </div>
+
+    <div class = "jumbotron" style = "text-align: center; margin-bottom: 0;">
+      <h1>GOOD LUCK</h1>
+      <p>I'm tired.</p>
+    </div>
+
   </body>
 </html>
