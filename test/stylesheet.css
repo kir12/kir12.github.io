@@ -1,3 +1,7 @@
+.container{
+  padding-top: 1em;
+}
+
 .header{
   /*fix prblm here*/
   background-color: rgba(0,0,0,.9) !important;
@@ -7,6 +11,29 @@
   background-size: cover !important;
 }
 
+.subheader{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+
+  text-align: center !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white;
+  font-family: 'Raleway' !important;
+
+}
+
+.heading{
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+}
 #top{
   height: 100vh !important;
   background: linear-gradient(to bottom right, #EE352E, #00933C, #B933AD);
@@ -18,4 +45,8 @@
   background: rgba(0,0,0,0);
   font-family: "Raleway";
   white-space: no-wrap;
+}
+#header1{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover1.jpg");
+
 }
