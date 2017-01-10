@@ -1,0 +1,21 @@
+.header{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+#top{
+  height: 100vh !important;
+  background: linear-gradient(to bottom right, #EE352E, #00933C, #B933AD);
+}
+
+#caption{
+  color: white;
+  padding-left: 3em;
+  background: rgba(0,0,0,0);
+  font-family: "Raleway";
+  white-space: no-wrap;
+}
