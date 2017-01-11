@@ -1,5 +1,6 @@
 .container{
   padding-top: 1em;
+  font-family: "Lato";
 }
 
 .header{
@@ -31,7 +32,7 @@
 
 .heading{
   margin: 0 auto;
-  width: 30%;
+  width: 50%;
   text-align: center;
 }
 #top{
@@ -48,5 +49,8 @@
 }
 #header1{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover1.jpg");
+}
 
+#header2{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/cover2.png");
 }
