@@ -104,6 +104,7 @@
       </div>
       <h1>Converting <code>011001</code> is easy. Make a table.</h1>
       <div style = "float: right; width: 50%;">
+        <p style = "text-align: center;">Fig 1: Binary Numbers and Indexes</p>
         <table class = "table">
           <tr>
             <td>Number</td>
@@ -128,19 +129,19 @@
       <h2>Now follow this very simple formula</h2>
       <p>If you're bad at math, essentially multiply each number by 2<sup>index</sup>, and add.</p>
       <div style = "text-align: center;">
-        <h3><code>Σ(number * 2<sup>index</sup>)</code></h3>
+        <h3><code>Decimal = Σ(number * 2<sup>index</sup>)</code></h3>
       </div>
       <h2>If you did everything right you'll get an answer of <code>25</code></h2>
       <p class = "small">2<sup>4</sup> + 2<sup>3</sup> + 2<sup>0</sup> = <code>25</code></p>
 
       <h1>Converting <code>int num = 25;</code> is easy. Answer these two questions.</h1>
-      <div style = "text-align: center;">
+      <div style = "text-align: center; padding: 1em; border: 1px solid grey; border-radius: 15px;">
         <p class = "lead">1. What's the largest exponent such that <code>2<sup>EXP</sup> <= number</code>?</p>
         <p>such that <code>exp</code> is whole</p>
         <p class = "lead">2. What is <code>number - 2<sup>EXP</sup></code>? That's your new number.</p>
       </div>
       <h2>Remember your exponents, they're your indexes. You should get <code>int[] exp = {4,3,0};</code></h2>
-      <p class = "lead">Those numbers say where your binary number has <code>1</code>. The places inbetween have <code>0</code>. Anyways, make a table like the one above, and get your answer (it's the same one)</p>
+      <p class = "lead">Those numbers indexes where a <code>1</code> is. The places inbetween have <code>0</code>. Make a table like the one above, and get your answer (it's the same one)</p>
       <div class = "heading">
         <pre class = "prettyprint">System.out.println("Memory");</pre>
       </div>
