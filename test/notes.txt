@@ -1,0 +1,12 @@
+topic 1: bits and possible unique items
+
+0 and 1
+
+2 ^ n possible unique items given n amount of permutations
+
+topic 2: basic memory spaces
+
+bytes, kilobytes, megabytes, gigabytes, terabytes
+
+topic 3: converting between them
+
