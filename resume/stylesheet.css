@@ -1,3 +1,4 @@
+/*top page stuff*/
 .header{
   /*fix prblm here*/
   background-color: rgba(0,0,0,.9) !important;
@@ -45,10 +46,15 @@
   color: white;
 }
 
-
 #favic a:visited{
   color: white;
 }
 #favic a:hover{
   color: #B933AD;
+}
+
+/*body stuff*/
+.container{
+  padding-top: 1em;
+  font-family: "Lato";
 }
