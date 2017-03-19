@@ -67,6 +67,7 @@
   color: white;
   padding: 1em;
   display: inline-block;
+  font-family: "Oswald" !important;
 }
 
 .emphasize-parent{
