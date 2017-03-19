@@ -1,0 +1,54 @@
+.header{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.subheader{
+  /*fix prblm here*/
+  background-color: rgba(0,0,0,.9) !important;
+  height: 25vh !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+
+  text-align: center !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white;
+  font-family: 'Raleway' !important;
+
+}
+
+.heading{
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+#top{
+  height: 100vh !important;
+  background: linear-gradient(to bottom right, #EE352E, #FF6319, #996633);
+}
+
+#caption{
+  color: white;
+  background: rgba(0,0,0,0);
+  font-family: "Raleway";
+  white-space: no-wrap;
+}
+#favic a:link{
+  color: white;
+}
+
+
+#favic a:visited{
+  color: white;
+}
+#favic a:hover{
+  color: #B933AD;
+}

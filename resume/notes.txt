@@ -1,0 +1,2 @@
+to do list:
+1) create randomly changing gradient for background
