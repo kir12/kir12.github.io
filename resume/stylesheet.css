@@ -59,9 +59,14 @@
   font-family: "Lato";
 }
 
-.container h1{
-  font-family: Lato;
+.container h2{
+  font-weight: 400;
 }
+.container h3{
+  font-weight: 300;
+}
+
+
 
 .emphasize{
   color: white;
@@ -72,4 +77,26 @@
 
 .emphasize-parent{
   text-align: center;
+}
+
+.stars{
+  background-color: #A7A9AC;
+  border-radius: 5px 5px 5px 5px;
+  display: inline-block;
+  padding: 1em;
+}
+
+.stars h1{
+  margin: 0;
+}
+.filled:before{
+  content: "\2605";
+  position: absolute;
+  color: #FCCC0A;
+}
+
+.unfilled:before{
+  content: "\2605";
+  position: absolute;
+  color: white;
 }
