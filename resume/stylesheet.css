@@ -58,3 +58,17 @@
   padding-top: 1em;
   font-family: "Lato";
 }
+
+.container h1{
+  font-family: Lato;
+}
+
+.emphasize{
+  color: white;
+  padding: 1em;
+  display: inline-block;
+}
+
+.emphasize-parent{
+  text-align: center;
+}
