@@ -1,0 +1,30 @@
+#top-header{
+	height:100vh;
+	margin:1em;
+	background-image:url('gensokyo.jpg');
+	background-attachment:fixed;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	color:white;
+
+	a{
+		color:white;
+	}
+	a:hover{
+		color:green;
+		text-decoration:none;
+	}
+}
+
+#top-header .container{
+	background: rgba(0, 0, 0, 0.5);
+	padding:1em;
+}
+
+.non-header h1{
+	color:white;
+	background-color:green;	
+	padding:2rem;
+	margin-bottom:2rem;
+}
