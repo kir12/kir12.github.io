@@ -30,4 +30,10 @@ body {
 #lang .col-md-3 {
   padding: 1em; }
 
+#footer {
+  background-color: white;
+  padding: 1rem; }
+  #footer p {
+    margin-bottom: 0; }
+
 /*# sourceMappingURL=stylesheet.css.map */
