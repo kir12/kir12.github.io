@@ -4,14 +4,15 @@ body {
 .non-header {
   background-color: white; }
   .non-header h1 {
+    border-top: 1rem solid #0A1128;
     color: white;
-    background-color: green;
+    background-color: #ED254E;
     padding: 2rem;
     margin-bottom: 2rem; }
 
 #lang .col-md-3 {
   padding: 1em;
-  background-color: #FFC857;
+  background-color: #F9DC5C;
   border: 1rem solid white;
   border-radius: 2rem; }
 
@@ -22,12 +23,20 @@ body {
     margin-bottom: 0; }
 
 @media (max-width: 768px) {
-  #top-header .col-md-4 {
-    padding: 1rem; }
-  #top-header .display-1 {
-    font-size: 4.5rem; }
-  #top-header p {
-    display: none; }
+  #top-header {
+    background-color: #0A1128;
+    color: white;
+    border-bottom: solid #731963 2rem; }
+    #top-header .col-md-4 {
+      padding: 1rem; }
+      #top-header .col-md-4 :hover {
+        color: #F9DC5C; }
+    #top-header .display-1 {
+      font-size: 4.5rem; }
+    #top-header p {
+      display: none; }
+    #top-header a {
+      color: white; }
 
   .non-header h1 {
     font-size: 2.5rem; }
@@ -49,7 +58,7 @@ body {
     #top-header a {
       color: white; }
     #top-header a:hover {
-      color: green;
+      color: #0496FF;
       text-decoration: none; }
 
   #top-header .container {
