@@ -1,5 +1,16 @@
+$breakpoint-tablet:768px;
+$red:#ED254E;
+$yellow:#F9DC5C;
+$green:#1B998B;
+$blue:#0496FF;
+$orange:#FFC857;
+
 body{
 	background-color:#e9ecef;	
+}
+
+@media(min-width:$breakpoint-tablet){
+	//to add stuff here
 }
 #top-header{
 	height:100vh;
