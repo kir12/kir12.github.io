@@ -2,6 +2,8 @@ body {
   background-color: #e9ecef; }
 
 .non-header {
+  border-top: 1rem solid #1B998B;
+  border-bottom: 1rem solid #0496FF;
   background-color: white; }
   .non-header h1 {
     border-top: 1rem solid #0A1128;
@@ -13,20 +15,24 @@ body {
 #lang .col-md-3 {
   padding: 1em;
   background-color: #F9DC5C;
-  border: 1rem solid white;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  border: 1rem solid white; }
 
 #footer {
-  background-color: white;
+  background-color: #0A1128;
+  border-top: 1rem solid #731963;
+  color: white;
   padding: 1rem; }
   #footer p {
     margin-bottom: 0; }
+  #footer a {
+    color: #F9DC5C; }
 
 @media (max-width: 768px) {
   #top-header {
     background-color: #0A1128;
     color: white;
-    border-bottom: solid #731963 2rem; }
+    border-bottom: solid #731963 1rem; }
     #top-header .col-md-4 {
       padding: 1rem; }
       #top-header .col-md-4 :hover {
