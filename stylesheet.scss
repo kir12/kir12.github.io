@@ -1,4 +1,13 @@
+//bootstrap stuff
 $breakpoint-tablet:768px;
+$display-1:6rem;
+$display-2:5.5rem;
+$display-3:4.5rem;
+$display-4:3.5rem;
+$h1:2.5rem;
+$h2:2rem;
+
+//themed colors
 $red:#ED254E;
 $yellow:#F9DC5C;
 $green:#1B998B;
@@ -8,33 +17,6 @@ $orange:#FFC857;
 body{
 	background-color:#e9ecef;	
 }
-
-@media(min-width:$breakpoint-tablet){
-	//to add stuff here
-}
-#top-header{
-	height:100vh;
-	background-image:url('gensokyo.jpg');
-	background-attachment:fixed;
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size:cover;
-	color:white;
-
-	a{
-		color:white;
-	}
-	a:hover{
-		color:green;
-		text-decoration:none;
-	}
-}
-
-#top-header .container{
-	background: radial-gradient(rgba(0, 0, 0,0.5),rgba(255,0,0,0));
-	padding:1em;
-}
-
 .non-header{
 	background-color:white;
 	h1{
@@ -47,6 +29,9 @@ body{
 
 #lang .col-md-3{
 	padding:1em;
+	background-color: $orange;
+	border:1rem solid white;
+	border-radius:2rem;
 }
 
 #footer{
@@ -56,3 +41,60 @@ body{
 		margin-bottom:0;	
 	}
 }
+
+//applies to mobile ONLY
+@media(max-width:$breakpoint-tablet){
+	#top-header{
+		.col-md-4{
+			padding:1rem;	
+		}
+		.display-1{
+			font-size:$display-3;	
+		}
+		p{
+			display:none;	
+		}
+	}
+	.non-header{
+		h1{
+			font-size:$h1;	
+		}	
+		h2{
+			font-size:$h2;	
+		}
+	}
+	#projects .col-md-4{
+		margin-top:1.5rem;
+		margin-bottom:1.5rem;
+	}
+}
+
+//applies to max size ONLY
+@media(min-width:$breakpoint-tablet){
+	#top-header{
+		height:100vh;
+		background-image:url('gensokyo.jpg');
+		background-attachment:fixed;
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:cover;
+		color:white;
+
+		a{
+			color:white;
+		}
+		a:hover{
+			color:green;
+			text-decoration:none;
+		}
+	}
+
+	#top-header .container{
+		background: radial-gradient(rgba(0, 0, 0,0.5),rgba(255,0,0,0));
+		padding:1em;
+	}
+
+	
+
+}
+

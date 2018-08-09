@@ -1,24 +1,6 @@
 body {
   background-color: #e9ecef; }
 
-#top-header {
-  height: 100vh;
-  background-image: url("gensokyo.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white; }
-  #top-header a {
-    color: white; }
-  #top-header a:hover {
-    color: green;
-    text-decoration: none; }
-
-#top-header .container {
-  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(255, 0, 0, 0));
-  padding: 1em; }
-
 .non-header {
   background-color: white; }
   .non-header h1 {
@@ -28,12 +10,50 @@ body {
     margin-bottom: 2rem; }
 
 #lang .col-md-3 {
-  padding: 1em; }
+  padding: 1em;
+  background-color: #FFC857;
+  border: 1rem solid white;
+  border-radius: 2rem; }
 
 #footer {
   background-color: white;
   padding: 1rem; }
   #footer p {
     margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  #top-header .col-md-4 {
+    padding: 1rem; }
+  #top-header .display-1 {
+    font-size: 4.5rem; }
+  #top-header p {
+    display: none; }
+
+  .non-header h1 {
+    font-size: 2.5rem; }
+  .non-header h2 {
+    font-size: 2rem; }
+
+  #projects .col-md-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; } }
+@media (min-width: 768px) {
+  #top-header {
+    height: 100vh;
+    background-image: url("gensokyo.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; }
+    #top-header a {
+      color: white; }
+    #top-header a:hover {
+      color: green;
+      text-decoration: none; }
+
+  #top-header .container {
+    background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(255, 0, 0, 0));
+    padding: 1em; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
