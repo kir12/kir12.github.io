@@ -7,6 +7,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha256-8zyeSXm+yTvzUN1VgAOinFgaVFEFTyYzWShOy9w7WoQ=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 	<style>
 		#canvas{
 			width:100%;
@@ -27,6 +28,7 @@
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+	<div class ="text-center" id = "response"><h2></h2></div>
 
 	<div class = "row align-items-center justify-content-center">
 		<div class = "col-md-6">
@@ -41,6 +43,8 @@
 	$("#form-submit").submit(function(event){
 		event.preventDefault();
 		flairtexts={};
+		$("#form-submit :input").prop('disabled',true);
+		$("#response").children().html("<i class='fas fa-spinner'></i> Graph is currently loading");
 		tally_scores($("#subreddit").val(),+ new Date());
 	});
 
@@ -49,7 +53,9 @@
 
 	//executes once recursion atually finish
 	function call_back(){
+		$('#form-submit :input').prop('disabled',false);
 		console.log(flairtexts);
+		$("#response").children().html("<i class='fas fa-check-square'></i> Graph has finished processing");
 	}
 
 	//refrence: https://stackoverflow.com/questions/25500316/sort-a-dictionary-by-value-in-javascript
@@ -76,6 +82,11 @@
 			flair_labels.push(item[0]);
 			scores.push(item[1]);
 		}
+
+		Chart.helpers.each(Chart.instances, function(instance){
+			instance.chart.destroy();
+		});
+
 		var ctx = document.getElementById('canvas').getContext('2d');
 		var myChart = new Chart(ctx, {
 			type: 'bar',
