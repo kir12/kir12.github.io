@@ -54,9 +54,14 @@
 	//executes once recursion atually finish
 	function call_back(){
 		$('#form-submit :input').prop('disabled',false);
-		console.log(flairtexts);
-		$("#response").children().html("<i class='fas fa-check-square'></i> Graph has finished processing");
-	}
+		if(Object.keys(flairtexts).length==0){
+			$("#response").children().html("<i class='fas fa-check-square'></i> This subreddit either does not exist or has no publicly available posts");
+		}
+		else{
+			console.log(flairtexts);
+			$("#response").children().html("<i class='fas fa-check-square'></i> Graph has finished processing");
+		}
+			}
 
 	//refrence: https://stackoverflow.com/questions/25500316/sort-a-dictionary-by-value-in-javascript
 	function sort_data(){
@@ -136,6 +141,8 @@
 				console.log(data.data[Object.keys(data.data).length-1]);
 				call_back();
 			}
+		}).fail(function(){
+			console.log("fail");
 		});
 	}
 	</script>
