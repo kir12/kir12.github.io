@@ -2,6 +2,9 @@
 
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Reddiflair</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -14,6 +17,7 @@
 			height:auto;
 		}
 	</style>
+	<link rel="shortcut icon" href="komi.jpg" type="image/x-icon">
 </head>
 <body>
 <div class = "container">
@@ -24,11 +28,16 @@
 	<form id = "form-submit">
 		<div class="form-group">
 			<label for="subreddit">Subreddit</label>
-			<input class="form-control" id="subreddit">
+			<div class ="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="append-r">https://reddit.com/r/</span>
+				</div>
+				<input aria-describedby="append-r" class="form-control" id="subreddit">
+			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
-	<div class ="text-center" id = "response"><h2></h2></div>
+	<div class ="text-center mt-3" id = "response"></div>
 
 	<div class = "row align-items-center justify-content-center">
 		<div class = "col-md-6">
@@ -37,114 +46,6 @@
 	</div>
 
 </div>
-<script>
-	//get sub name from user and pass into api function
-	//TODO: must handle shitty submissions
-	$("#form-submit").submit(function(event){
-		event.preventDefault();
-		flairtexts={};
-		$("#form-submit :input").prop('disabled',true);
-		$("#response").children().html("<i class='fas fa-spinner'></i> Graph is currently loading");
-		tally_scores($("#subreddit").val(),+ new Date());
-	});
-
-	//stores data
-	var flairtexts={};
-
-	//executes once recursion atually finish
-	function call_back(){
-		$('#form-submit :input').prop('disabled',false);
-		if(Object.keys(flairtexts).length==0){
-			$("#response").children().html("<i class='fas fa-check-square'></i> This subreddit either does not exist or has no publicly available posts");
-		}
-		else{
-			console.log(flairtexts);
-			$("#response").children().html("<i class='fas fa-check-square'></i> Graph has finished processing");
-		}
-			}
-
-	//refrence: https://stackoverflow.com/questions/25500316/sort-a-dictionary-by-value-in-javascript
-	function sort_data(){
-		var items = Object.keys(flairtexts).map(function(key) {
-			  return [key, flairtexts[key]];
-		});
-
-		// Sort the array based on the second element
-		items.sort(function(first, second) {
-			  return second[1] - first[1];
-		});
-
-		// Create a new array with only the first 10 items
-		return items.slice(0, 10);
-	}
-
-	//generates graph
-	function gen_graph(){
-		var sorted_items = sort_data();
-		var flair_labels=[];
-		var scores=[];
-		for(item of sorted_items){
-			flair_labels.push(item[0]);
-			scores.push(item[1]);
-		}
-
-		Chart.helpers.each(Chart.instances, function(instance){
-			instance.chart.destroy();
-		});
-
-		var ctx = document.getElementById('canvas').getContext('2d');
-		var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: flair_labels,
-				datasets: [{
-					label: '# of Scores',
-					data: scores,
-					backgroundColor: [
-							],
-					borderColor: [
-							],
-					borderWidth: 1
-				}]
-			},
-			options: {
-				animation:false,
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
-			}
-		});
-	}
-
-	//queries every 1000 posts recursively for consistently older posts
-	//stops when posts < 1000
-	function tally_scores(sub,tstmp){
-		console.log("a");
-		var result = $.get("https://api.pushshift.io/reddit/search/submission/?subreddit="+sub+"&sort=desc&sort_type=created_utc&after=1&before="+tstmp+"&size=10000",function(data){
-			Array.from(data.data).forEach(child => {
-				if(flairtexts[child["link_flair_text"]]==undefined){
-					flairtexts[child["link_flair_text"]]=1;
-				}
-				else{
-					flairtexts[child["link_flair_text"]]++;
-				}
-			});
-			if(Object.keys(data.data).length == 1000){
-				gen_graph();
-				tally_scores(sub,(data.data[999])["created_utc"]);
-			}
-			else{
-				console.log(data.data[Object.keys(data.data).length-1]);
-				call_back();
-			}
-		}).fail(function(){
-			console.log("fail");
-		});
-	}
-	</script>
+<script src = "call.js"></script>
 </body>
 </html>
