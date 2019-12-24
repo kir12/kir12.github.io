@@ -98,6 +98,15 @@ function gen_graph(){
 	});
 }
 
+function update_list(child){
+	if(flairtexts[child["link_flair_text"]]==undefined){
+		flairtexts[child["link_flair_text"]]=1;
+	}
+	else{
+		flairtexts[child["link_flair_text"]]++;
+	}
+}
+
 //queries every 1000 posts recursively for consistently older posts
 //stops when posts < 1000
 function tally_scores(sub,tstmp){
@@ -107,17 +116,18 @@ function tally_scores(sub,tstmp){
 			//in case pushshift didn't catch data
 			if(child["link_flair_text"]==undefined){
 				var result = $.get(child["full_link"]+".json",function(child_payload){
-					var is_removed = child_payload[0].data.children[0].data["removed"];
+					var is_removed = child_payload[0].data.children[0].data["removed_by_category"] != undefined;
 					if(is_removed){return;}//ignore deleted posts
-					else{child["link_flair_text"]=child_payload.data.children[0].data["link_flair_text"];}
+					else{
+						var direct_flair = child_payload[0].data.children[0].data["link_flair_text"];
+						if(direct_flair == undefined){child["link_flair_text"]="No Flair";}
+						else{child["link_flair_text"]=direct_flair;}
+						update_list(child);
+					}
 				});
 			}
-			else if(flairtexts[child["link_flair_text"]]==undefined){
-				flairtexts[child["link_flair_text"]]=1;
-			}
-			else{
-				flairtexts[child["link_flair_text"]]++;
-			}
+			else{update_list(child);}
+
 		});
 		if(Object.keys(data.data).length == 1000){
 			gen_graph();
