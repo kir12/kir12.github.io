@@ -19,8 +19,11 @@
 		#komi-head{
 			color:white;
 			background-image: radial-gradient(#101636, #1e295f);
-			border-top: 1em solid #5e0087;
+			border-top: 1em solid #421C52;
 			border-bottom: 1em solid #a03a47;
+		}
+		#info{
+			display:none;
 		}
 	</style>
 	<link rel="shortcut icon" href="komi.jpg" type="image/x-icon">
@@ -48,6 +51,7 @@
 						Reddiflair is a small utility that generates a graph of a subreddit's flair usage which can answer flair-related questions like <em>"Which flairs are the most popular?"</em>
 						It works with pretty much any public subreddit that is actively flaired.
 						The project was built over the course of 4 days during Christmas 2019.
+						<em>Warning:</em> the website may not perform as well in post-heavy subreddits.
 						<li><b>Aren't there websites that already cover subreddit statistics?</b></li>
 						<em>Yep</em>, there are! (Examples <a href = "https://pushshift.io/">1</a>, <a href="https://subredditstats.com/">2</a>, and <a href = "https://dashboard.laterforreddit.com/analysis/">3</a>)
 						This project would've never been started if any of them had flair statistics ... except none of them did, which is surprising.
@@ -83,6 +87,10 @@
 	<div class = "row align-items-center justify-content-center">
 		<div class = "col-md-6">
 			<canvas id = "canvas" width="50" height="50"></canvas>
+		</div>
+		<div class = "col-md-6" id = "info">
+			<h2>Other Flairs</h2>
+			<ul id = "more_flairs"></ul>
 		</div>
 	</div>
 

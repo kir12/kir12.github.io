@@ -7,6 +7,8 @@ $("#form-submit").submit(function(event){
 
 	$("#response").removeClass("alert alert-success alert-warning alert-danger").addClass("alert alert-warning");
 	$("#response").html("<i class='fas fa-spinner fa-spin'></i> Graph is currently loading");
+	$("#info").css("display","none");
+	$("#more_flairs").html("");
 	tally_scores($("#subreddit").val(),+ new Date());
 });
 
@@ -25,7 +27,7 @@ function call_back(){
 		$("#response").removeClass("alert alert-success alert-warning alert-danger").addClass("alert alert-success");
 		$("#response").html("<i class='fas fa-check-square'></i> Graph has finished processing");
 	}
-		}
+}
 
 //refrence: https://stackoverflow.com/questions/25500316/sort-a-dictionary-by-value-in-javascript
 function sort_data(){
@@ -39,7 +41,19 @@ function sort_data(){
 	});
 
 	// Create a new array with only the first 10 items
-	return items.slice(0, 10);
+	return items;
+}
+
+//fills right side item with list of flairs too small to include
+function side_info(sorted_items){
+	if(sorted_items.length>10){
+		var items=[];
+		$.each(sorted_items.slice(10,sorted_items.length),function(i, item){
+			items.push("<li><b>"+item[0]+":</b> " + item[1] + "</li>");
+		});
+		$("#more_flairs").html(items.join(""));
+		$("#info").css("display","block");
+	}
 }
 
 //generates graph
@@ -47,10 +61,11 @@ function gen_graph(){
 	var sorted_items = sort_data();
 	var flair_labels=[];
 	var scores=[];
-	for(item of sorted_items){
+	for(item of sorted_items.slice(0,10)){
 		flair_labels.push(item[0]);
 		scores.push(item[1]);
 	}
+
 
 	Chart.helpers.each(Chart.instances, function(instance){
 		instance.chart.destroy();
@@ -96,6 +111,8 @@ function gen_graph(){
 			}
 		}
 	});
+
+	side_info(sorted_items);
 }
 
 function update_list(child){
@@ -129,8 +146,8 @@ function tally_scores(sub,tstmp){
 			else{update_list(child);}
 
 		});
+		gen_graph();
 		if(Object.keys(data.data).length == 1000){
-			gen_graph();
 			tally_scores(sub,(data.data[999])["created_utc"]);
 		}
 		else{
