@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Reddiflair</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha256-8zyeSXm+yTvzUN1VgAOinFgaVFEFTyYzWShOy9w7WoQ=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+	<style>
+		#canvas{
+			width:100%;
+			height:auto;
+		}
+		#komi-head{
+			color:white;
+			background-image: radial-gradient(#101636, #1e295f);
+			border-top: 1em solid #421C52;
+			border-bottom: 1em solid #a03a47;
+		}
+		#info{
+			display:none;
+		}
+	</style>
+	<link rel="shortcut icon" href="komi.jpg" type="image/x-icon">
+</head>
+<body>
+<div class = "container">
+	<div class = "jumbotron text-center mt-3" id = "komi-head">
+		<h1>Reddiflair</h1>
+		<h3>A Small Flair Grapher</h3>
+		<p class>Written by kir12</p>
+	</div>
+
+	<div id="accordion" class = "mb-3">
+		<div class="card">
+			<div class="card-header" id="headingOne">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">A Brief FAQ</button>
+				</h5>
+			</div>
+
+			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+					<ul>
+						<li><b>What is Reddiflair?</b></li>
+						Reddiflair is a small utility that generates a graph of a subreddit's flair usage which can answer flair-related questions like <em>"Which flairs are the most popular?"</em>
+						It works with pretty much any public subreddit that is actively flaired.
+						The project was built over the course of 4 days during Christmas 2019.
+						<em>Warning:</em> the website may not perform as well in post-heavy subreddits.
+						<li><b>Aren't there websites that already cover subreddit statistics?</b></li>
+						<em>Yep</em>, there are! (Examples <a href = "https://pushshift.io/">1</a>, <a href="https://subredditstats.com/">2</a>, and <a href = "https://dashboard.laterforreddit.com/analysis/">3</a>)
+						This project would've never been started if any of them had flair statistics ... except none of them did, which is surprising.
+						Reddit's <strike>stupid</strike> decision to <a href = "https://www.reddit.com/r/changelog/comments/7tus5f/update_to_search_api/">completely remove mass timestamp-based searching</a> is probably why; hence, 
+						this project exists to fill a void.
+						<li><b>How does this project work if time-based indexing is no longer supported?</b></li>
+						Time-based indexing is (thankfully) in fact still supported by Pushshift, a third party Reddit API.
+						Their one restriction, however, is that all queries are limited to a max of 1000 posts.
+						For this reason, to survey a subreddit's entire post history for flairs as Reddiflair does, it'll query by every 1000 posts all the way back to the subreddit's first post.
+						It is, fundamentally, just a series of API calls, so a full server-based backend isn't necessary.
+
+						For those interested, the source code is located <a href = "https://github.com/kir12/kir12.github.io/tree/master/flairs">here</a>.
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form id = "form-submit">
+		<div class="form-group">
+			<label for="subreddit">Subreddit</label>
+			<div class ="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="append-r">https://reddit.com/r/</span>
+				</div>
+				<input aria-describedby="append-r" class="form-control" id="subreddit">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+	<div class ="text-center mt-3" id = "response"></div>
+
+	<div class = "row align-items-center justify-content-center">
+		<div class = "col-md-6">
+			<canvas id = "canvas" width="50" height="50"></canvas>
+		</div>
+		<div class = "col-md-6" id = "info">
+			<h2>Other Flairs</h2>
+			<ul id = "more_flairs"></ul>
+		</div>
+	</div>
+
+</div>
+<script src = "call.js"></script>
+</body>
+</html>
